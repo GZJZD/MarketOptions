@@ -1,0 +1,32 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>Options</groupId>
+	<artifactId>Options</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>Options Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+    	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    	<!-- spring版本号 -->
+    	<spring.version>4.2.5.RELEASE</spring.version>
+    	<!-- mybatis版本号 -->
+    	<mybatis.version>3.2.8</mybatis.version>
+    	<!-- mysql驱动版本号 -->
+    	<mysql-driver.version>5.1.32</mysql-driver.version>
+    	<!--aspectj 数据源切换-->
+    	<aspectj.version>1.8.10</aspectj.version>
+    	<!-- log4j日志包版本号 -->
+    	<log4j.version>1.2.17</log4j.version>
+	</properties>
+  
+	<dependencies>
+		<!-- 添加jstl依赖 -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+      		<version>1.2</version>
+    		</dependency>
+  	</dependencies>
+</project>
