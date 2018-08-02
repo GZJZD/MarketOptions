@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.web.dao.CrawlerFinancialDisclosureDao">
+	<resultMap type="com.web.pojo.CrawlerFinancialDisclosure" id="BaseResultMap">
+		<id column="id" property="id"/>
+		<result column="shares_name" property="sharesName"/>
+		<result column="shares_code" property="sharesCode"/>
+		<result column="performance_change" property="performanceChange"/>
+		<result column="expected_net_profit" property="expectedNetProfit"/>
+		<result column="performance_change_ratio" property="performanceChangeRatio"/>
+		<result column="performance_change_reason" property="performanceChangeReason"/>
+		<result column="preview_type" property="previewType"/>
+		<result column="previous_year_profit" property="previousYearProfit"/>
+		<result column="announcement_date" property="announcementDate"/>
+	</resultMap>
+</mapper>

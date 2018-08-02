@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.web.dao.CrawlerCompanyAnnouncementDao">
+	<resultMap type="com.web.pojo.CrawlerCompanyAnnouncement" id="BaseResultMap">
+		<id column="id" property="id"/>
+		<result column="shares_name" property="sharesName"/>
+		<result column="shares_code" property="sharesCode"/>
+		<result column="announce_title" property="announceTitle"/>
+		<result column="announce_url" property="announceUrl"/>
+		<result column="announce_type" property="announceType"/>
+		<result column="announce_date" property="announceDate"/>
+	</resultMap>
+</mapper>

@@ -4,7 +4,7 @@ package com.web.pojo;
  * @author Administrator
  *
  */
-public class CrawlerRetrictedCirculation {
+public class CrawlerRestrictedCirculation {
 	//主键
 	private Long id;
 	//股票名称

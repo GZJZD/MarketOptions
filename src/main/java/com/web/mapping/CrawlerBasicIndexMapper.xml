@@ -1,1 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.web.dao.CrawlerBasicIndexDao">
+	<resultMap type="com.web.pojo.CrawlerBasicIndex" id="BaseResultMap">
+		<id column="id" property="id"/>
+		<result column="shares_name" property="sharesName"/>
+		<result column="shares_code" property="sharesCode"/>
+		<result column="latest_price" property="latestPrice"/>
+		<result column="rise_fall_ratio" property="riseFallRatio"/>
+		<result column="rise_fall_price" property="riseFallPirce"/>
+		<result column="volumn" property="volumn"/>
+		<result column="price" property="price"/>
+		<result column="max_price" property="maxPrice"/>
+		<result column="min_pirce" property="minprice"/>
+		<result column="open_price" property="openPrice"/>
+		<result column="close_price" property="closePrice"/>
+		<result column="change_volumn" property="changeVolumn"/>
+		<result column="quantity_ratio" property="quantityRatio"/>
+		<result column="pe_ratio" property="peRatio"/>
+		<result column="pb_ratio" property="pbRatio"/>
+	</resultMap>
+</mapper>

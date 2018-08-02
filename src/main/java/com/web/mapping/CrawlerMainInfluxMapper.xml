@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.web.dao.CrawlerMainInfluxDao">
+    <resultMap id="BaseResultMap" type="com.web.pojo.CrawlerMainInflux">
+        <id column="id" property="id"/>
+        <result column="shares_name" property="sharesName"/>
+        <result column="shares_code" property="sharesCode"/>
+        <result column="main_influx_price" property="mainInfluxPrice"/>
+        <result column="main_influx_ratio" property="mainInfluxRatio"/>
+        <result column="huge_influx_price" property="hugeInfluxPrice"/>
+        <result column="huge_influx_ratio" property="hugeInfluxRatio"/>
+        <result column="large_influx_price" property="largeInfluxPrice"/>
+        <result column="large_influx_ratio" property="largeInfluxRatio"/>
+        <result column="middle_influx_price" property="middleInfluxPrice"/>
+        <result column="middle_influx_ratio" property="middleInfluxRatio"/>
+        <result column="small_influx_price" property="smallInfluxPrice"/>
+        <result column="small_influx_ratio" property="smallInfluxRatio"/>
+        <result column="date" property="date"/>
+    </resultMap>
+</mapper>
+
