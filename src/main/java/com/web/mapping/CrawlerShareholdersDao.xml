@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.web.dao.CrawlerShareholdersDao">
+
+    <resultMap id="BaseResultMap" type="com.web.pojo.CrawlerShareholders">
+        <id column="id" property="id"/>
+        <result column="shares_name" property="sharesName"/>
+        <result column="shares_code" property="sharesCode"/>
+        <result column="shareholders_name" property="shareholdersName"/>
+        <result column="change_type" property="changeType"/>
+        <result column="change_share" property="changeShare"/>
+        <result column="change_equity_ratio" property="changeEquityRatio"/>
+        <result column="change_share_ratio" property="changeShareRatio"/>
+        <result column="total_hold" property="totalHold"/>
+        <result column="total_equity_ratio" property="totalEquityRatio"/>
+        <result column="total_share" property="totalShare"/>
+        <result column="total_share_ratio" property="totalShareRatio"/>
+        <result column="begin_date" property="beginDate"/>
+        <result column="end_date" property="endDate"/>
+        <result column="announcement_date" property="announcementDate"/>
+    </resultMap>
+</mapper>
