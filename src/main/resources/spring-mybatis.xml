@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="GBK" ?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
@@ -13,99 +13,56 @@
                         http://www.springframework.org/schema/context/spring-context-3.1.xsd
                         http://www.springframework.org/schema/tx
                         http://www.springframework.org/schema/tx/spring-tx.xsd">
-
-    <!-- å¯ç”¨AjpectJè‡ªåŠ¨ä»£ç† -->
-    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
-
-
-    <!-- å¯ç”¨æ³¨è§£å¼äº‹åŠ¡å¤„ç† --><!-- (äº‹åŠ¡ç®¡ç†)transaction manager, use JtaTransactionManager for global tx -->
-    <!--<tx:annotation-driven transaction-manager="transactionManager"/>-->
-    <!-- ç¬¬ä¸€ç§æ–¹å¼ï¼šåŠ è½½ä¸€ä¸ªpropertiesæ–‡ä»¶ -->
+    <!-- ÆôÓÃAjpectJ×Ô¶¯´úÀí -->
+    <!-- µÚÒ»ÖÖ·½Ê½£º¼ÓÔØÒ»¸öpropertiesÎÄ¼þ -->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="order" value="12" />
         <property name="ignoreUnresolvablePlaceholders" value="true" />
         <property name="location" value="classpath:jdbc.properties"/>
     </bean>
 
-    <!-- æœ¬åœ°æ•°æ®æº -->
+    <!-- ±¾µØÊý¾ÝÔ´ -->
     <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close">
         <property name="driverClassName" value="${driverClasss}"/>
         <property name="url" value="${jdbcUrl}"/>
         <property name="username" value="${username}"/>
         <property name="password" value="${password}"/>
-        <!-- åˆå§‹åŒ–è¿žæŽ¥å¤§å° -->
+        <!-- ³õÊ¼»¯Á¬½Ó´óÐ¡ -->
         <property name="initialSize" value="${initialSize}"></property>
-        <!-- è¿žæŽ¥æ± æœ€å¤§æ•°é‡ -->
+        <!-- Á¬½Ó³Ø×î´óÊýÁ¿ -->
         <property name="maxActive" value="${maxActive}"></property>
-        <!-- è¿žæŽ¥æ± æœ€å¤§ç©ºé—² -->
+        <!-- Á¬½Ó³Ø×î´ó¿ÕÏÐ -->
         <property name="maxIdle" value="${maxIdle}"></property>
-        <!-- è¿žæŽ¥æ± æœ€å°ç©ºé—² -->
+        <!-- Á¬½Ó³Ø×îÐ¡¿ÕÏÐ -->
         <property name="minIdle" value="${minIdle}"></property>
-        <!-- èŽ·å–è¿žæŽ¥æœ€å¤§ç­‰å¾…æ—¶é—´ -->
+        <!-- »ñÈ¡Á¬½Ó×î´óµÈ´ýÊ±¼ä -->
         <property name="maxWait" value="${maxWait}"></property>
     </bean>
 
-    <!-- é¦™æ¸¯æ•°æ®åº“ç›¸å…³ -->
-    <bean id="dataSourceHongKong" class="org.apache.commons.dbcp.BasicDataSource"
-          destroy-method="close">
-        <property name="driverClassName" value="${jdbc.hongkong.driver}" />
-        <property name="url" value="${jdbc.hongkong.url}" />
-        <property name="username" value="${jdbc.hongkong.username}" />
-        <property name="password" value="${jdbc.hongkong.password}" />
-        <!-- åˆå§‹åŒ–è¿žæŽ¥å¤§å° -->
-        <property name="initialSize" value="${jdbc.hongkong.initialSize}"></property>
-        <!-- è¿žæŽ¥æ± æœ€å¤§æ•°é‡ -->
-        <property name="maxActive" value="${jdbc.hongkong.maxActive}"></property>
-        <!-- è¿žæŽ¥æ± æœ€å¤§ç©ºé—² -->
-        <property name="maxIdle" value="${jdbc.hongkong.maxIdle}"></property>
-        <!-- è¿žæŽ¥æ± æœ€å°ç©ºé—² -->
-        <property name="minIdle" value="${jdbc.hongkong.minIdle}"></property>
-        <!-- èŽ·å–è¿žæŽ¥æœ€å¤§ç­‰å¾…æ—¶é—´ -->
-        <property name="maxWait" value="${jdbc.hongkong.maxWait}"></property>
-    </bean>
 
-    <!-- DAOæŽ¥å£æ‰€åœ¨åŒ…åï¼ŒSpringä¼šè‡ªåŠ¨æŸ¥æ‰¾å…¶ä¸‹çš„ç±» -->
+    <!-- DAO½Ó¿ÚËùÔÚ°üÃû£¬Spring»á×Ô¶¯²éÕÒÆäÏÂµÄÀà -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.web.dao"/>
-        <!--<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>-->
     </bean>
 
-    <!-- è‡ªåŠ¨æ‰«æ -->
+    <!-- ×Ô¶¯É¨Ãè -->
     <context:component-scan base-package="com.web">
         <context:exclude-filter type="annotation"
        expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
 
 
-    <!-- (äº‹åŠ¡ç®¡ç†)transaction manager, use JtaTransactionManager for global tx -->
+    <!-- (ÊÂÎñ¹ÜÀí)transaction manager, use JtaTransactionManager for global tx -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-        <property name="dataSource" ref="multipleDataSource"/>
+        <property name="dataSource" ref="myDataSource"/>
     </bean>
 
 
-    <!--å®šä¹‰æ•°æ®æºåˆ‡æ¢ç±»-->
-    <bean id="multipleDataSource" class="com.web.database.config.MultipleDataSource">
-        <!--&lt;!&ndash; è®¾ç½®é»˜è®¤çš„ç›®æ ‡æ•°æ®æº &ndash;&gt;-->
-        <property name="defaultTargetDataSource" ref="myDataSource"/>
-        <property name="targetDataSources">
-            <map>
-                <entry key="myDataSource" value-ref="myDataSource"/>
-                <entry key="dataSourceHongKong" value-ref="dataSourceHongKong"/>
-            </map>
-        </property>
-
-    </bean>
-
-    <!-- mybatiså’Œspringå®Œç¾Žæ•´åˆï¼Œä¸éœ€è¦mybatisçš„é…ç½®æ˜ å°„æ–‡ä»¶ -->
+    <!-- mybatisºÍspringÍêÃÀÕûºÏ£¬²»ÐèÒªmybatisµÄÅäÖÃÓ³ÉäÎÄ¼þ -->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="multipleDataSource"/>
-        <!--<property name="configLocation" value="classpath:mybatis.xml"></property>-->
-        <!-- è‡ªåŠ¨æ‰«æmapping.xmlæ–‡ä»¶ -->
+        <property name="dataSource" ref="myDataSource"/>
+        <!-- ×Ô¶¯É¨Ãèmapping.xmlÎÄ¼þ -->
         <property name="mapperLocations" value="classpath:com/web/mapping/*.xml"></property>
-
     </bean>
-
-    <import resource="spring-activemq.xml"/>
-
 </beans>
