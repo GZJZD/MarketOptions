@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<!--
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.4
+Version: 4.0.2
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+<meta charset="utf-8"/>
+<title>公司信息</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link rel="stylesheet" type="text/css" href="../../assets/global/plugins/select2/select2.css"/>
+<link rel="stylesheet" type="text/css" href="../../assets/global/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css"/>
+<link rel="stylesheet" type="text/css" href="../../assets/global/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css"/>
+<link rel="stylesheet" type="text/css" href="../../assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+<link href="../../assets/admin/pages/css/news.css" rel="stylesheet" type="text/css"/>
+<!-- END PAGE LEVEL STYLES -->
+<!-- BEGIN THEME STYLES -->
+<link href="../../assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="../../assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+<link id="style_color" href="../../assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css"/>
+<link href="../../assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
+<!-- END THEME STYLES -->
+<style>
+     th {text-align:center}
+     td {text-align:center}
+</style>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<!-- DOC: Apply "page-header-fixed-mobile" and "page-footer-fixed-mobile" class to body element to force fixed header or footer in mobile devices -->
+<!-- DOC: Apply "page-sidebar-closed" class to the body and "page-sidebar-menu-closed" class to the sidebar menu element to hide the sidebar by default -->
+<!-- DOC: Apply "page-sidebar-hide" class to the body to make the sidebar completely hidden on toggle -->
+<!-- DOC: Apply "page-sidebar-closed-hide-logo" class to the body element to make the logo hidden on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-hide" class to body element to completely hide the sidebar on sidebar toggle -->
+<!-- DOC: Apply "page-sidebar-fixed" class to have fixed sidebar -->
+<!-- DOC: Apply "page-footer-fixed" class to the body element to have fixed footer -->
+<!-- DOC: Apply "page-sidebar-reversed" class to put the sidebar on the right side -->
+<!-- DOC: Apply "page-full-width" class to the body element to have full width page without the sidebar menu -->
+<body class="page-header-fixed page-quick-sidebar-over-content ">
+<!-- BEGIN HEADER -->
+<div class="page-header navbar navbar-fixed-top">
+    <!-- BEGIN HEADER INNER -->
+    <div class="page-header-inner">
+        <!-- BEGIN LOGO -->
+        <div class="page-logo">
+            <a href="javascripts:;">
+            <img src="../../assets/admin/layout/img/qiquanpingtai.png" alt="logo"/>
+            </a>
+            <div class="menu-toggler sidebar-toggler hide">
+                <!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+            </div>
+        </div>
+        <!-- END LOGO -->
+        <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+        </a>
+        <!-- END RESPONSIVE MENU TOGGLER -->
+
+        <!-- BEGIN TOP NAVIGATION MENU -->
+        <div class="top-menu">
+            <ul class="nav navbar-nav pull-right">
+                <!-- BEGIN NOTIFICATION DROPDOWN -->
+                <!-- BEGIN INBOX DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+
+                <!-- END INBOX DROPDOWN -->
+                <!-- BEGIN TODO DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+
+                <!-- END TODO DROPDOWN -->
+                <!-- BEGIN USER LOGIN DROPDOWN -->
+                <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                <li class="dropdown dropdown-user">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                    <img alt="" class="img-circle" src="../../assets/admin/layout/img/frog.jpg"/>
+                    <span class="username username-hide-on-mobile">
+                    Frog </span>
+                    <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-default">
+                        <li>
+                            <a href="Option_Login_soft.html">
+                            <i class="icon-lock"></i> Log Out </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- END USER LOGIN DROPDOWN -->
+
+            </ul>
+        </div>
+        <!-- END TOP NAVIGATION MENU -->
+    </div>
+    <!-- END HEADER INNER -->
+</div>
+<!-- END HEADER -->
+<div class="clearfix">
+</div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+    <!-- BEGIN SIDEBAR -->
+    <div class="page-sidebar-wrapper">
+        <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+        <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+        <div class="page-sidebar navbar-collapse collapse">
+            <!-- BEGIN SIDEBAR MENU -->
+            <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+            <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+            <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+            <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+            <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+            <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+            <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+                <li class="">
+                    <a href="javascript:;">
+                        <i class="icon-user"></i>
+                        <span class="title">订单管理</span>
+                        <span class="selected"></span>
+                        <span class="arrow open"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li  class="">
+                            <a href="Options_Orders_Inquires.html">
+                                <i class="icon-trophy"></i>
+                                询价订单
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="javascript:;">
+                        <i class="icon-tag"></i>
+                        <span class="title">财务管理</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li  class="">
+                            <a href="Options_Finance_Desposit.html">
+                                <i class="icon-tag"></i>
+                                保证金确认
+                            </a>
+                        </li>
+                        <li  class="">
+                            <a href="Options_Finance_Reports.html">
+                                <i class="icon-umbrella"></i>
+                                财务报表
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="javascript:;">
+                        <i class="icon-bell"></i>
+                        <span class="title">风控管理</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li  class="">
+                            <a href="Options_Risk_RiskManagement.html">
+                                <i class="icon-magnet"></i>
+                                风控数据
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="javascript:;">
+                        <i class="icon-plane"></i>
+                        <span class="title">配置信息</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li  class="">
+                            <a href="Options_Config_Quote.html">
+                                <i class="icon-folder"></i>
+                                报价信息
+                            </a>
+                        </li>
+                        <li  class="">
+                            <a href="Options_Config_Hedge.html">
+                                <i class="icon-film"></i>
+                                对冲配置
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active open">
+                    <a href="javascript:;">
+                        <i class="icon-compass"></i>
+                        <span class="title">小功能</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li  class="active open">
+                            <a href="Options_Function_Companys.html">
+                                <i class="icon-fire"></i>
+                                公司信息
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a href="javascript:;">
+                        <i class="icon-settings"></i>
+                        <span class="title">系统管理</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li  class="">
+                            <a href="Options_Setting_Users.html">
+                                <i class="icon-folder"></i>
+                                用户管理
+                            </a>
+                        </li>
+                        <li  class="">
+                            <a href="Options_Setting_Posts.html">
+                                <i class="icon-flag"></i>
+                                岗位管理
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- END SIDEBAR MENU -->
+        </div>
+    </div>
+    <!-- END SIDEBAR -->
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+        <div class="page-content">
+            <!-- BEGIN PAGE HEADER-->
+            <div class="page-bar">
+                <ul class="page-breadcrumb">
+                    <li>
+                        <i class="fa fa-home"></i>
+                        <a href="javascript:;">Home</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href="javascript:;">Functions</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                    <li>
+                        <a href="Options_Function_Companys.html">Function_Companys</a>
+                        <i class="fa fa-angle-right"></i>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- END PAGE HEADER-->
+            <div class="note note-success note-bordered">
+  				<p>
+  				<span class="label label-danger">NOTE:</span>文档尚未产出:<a href="http://baidu.com" target="_blank">文档地址</a>
+  				</p>
+  			</div>
+            <div class="row">
+                <div class="col-md-12 news-page">
+                    <div>
+                        <h1>贵州茅台
+                            <span style="font-size: 16px">(600519)</span></h1>
+                    </div>
+                    <hr>
+                </div>
+                <!--基本指标-->
+                <div class="col-md-12">
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption caption-md">
+                                <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject font-blue-madison bold uppercase" style="font-size: 20px;">基本指标</span>
+                            </div>
+                        </div>
+                        <div class="portlet-body">
+                            <div class="row number-stats">
+                                <div class="col-md-1">
+                                    <div class="stat-left">
+                                        <div class="stat-number">
+                                            <div class="number" style="color:green">
+                                                 <strong>719.21</strong> 
+                                            </div>
+                                            <i class=icon-long-arrow-down></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <div class="stat-right">
+                                        <div class="stat-number">
+                                            <div class="title" style="color:green">
+                                                 -19.35
+                                            </div>
+                                            <div class="title" style="color:green">
+                                                 -2.62%
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-10">
+                                    <table  table-condensed" id="sample_1">
+                                        <tbody>
+                                            <tr>
+                                                <th>今开：</th>
+                                                <td id="gt1" style="color:red">738.90</td>
+                                                <th>最高：</th>
+                                                <td id="gt2" style="color:red">740.66</td>
+                                                <th>涨停：</th>
+                                                <td id="gt3" style="color:red">812.42</td>
+                                                <th>换手：</th>
+                                                <td id="gt4">0.34%</td>
+                                                <th>成交量：</th>
+                                                <td id="gt5">4.22万手</td>
+                                                <th>市盈：</th>
+                                                <td id="gt6">26.55</td>
+                                                <th>总市值：</th>
+                                                <td id="gt7">9035亿</td>
+                                            </tr>
+                                            <tr>
+                                                <th>昨收：</th>
+                                                <td id="gt8">738.56</td>
+                                                <th>最低：</th>
+                                                <td id="gt9" style="color:green">715.00</td>
+                                                <th>跌停：</th>
+                                                <td id="gt10" style="color:green">664.70</td>
+                                                <th>量比：</th>
+                                                <td id="gt11">1.47</td>
+                                                <th>成交额：</th>
+                                                <td id="gt12">30.59亿</td>
+                                                <th>市净：</th>
+                                                <td id="gt13">10.49</td>
+                                                <th>流通市值：</th>
+                                                <td id="gt14">9035亿</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--主力流入-->
+                <div class="col-md-12">
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption caption-md">
+                                <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject font-blue-madison bold uppercase" style="font-size: 20px;">主力流入</span>
+                            </div>
+                        </div>
+                        <div class="portlet-body">             
+                            <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                <tr>
+                                    <th rowspan="2" style="vertical-align:middle;">日期</th>
+                                    <th colspan="2">主力净流入</th>
+                                    <th colspan="2">超大单净流入</th>
+                                    <th colspan="2">大单净流入</th>
+                                    <th colspan="2">中单净流入</th>
+                                    <th colspan="2">小单净流入</th>
+                                </tr>
+                                <tr>
+                                    <th>净额</th>
+                                    <th>净占比</th>
+                                    <th>净额</th>
+                                    <th>净占比</th>
+                                    <th>净额</th>
+                                    <th>净占比</th>
+                                    <th>净额</th>
+                                    <th>净占比</th>
+                                    <th>净额</th>
+                                    <th>净占比</th>
+                                </tr>
+                                <tr>
+                                    <td>2018-07-30</td>
+                                    <td style="color: red">29.81万</td>
+                                    <td style="color: red">100%</td>
+                                    <td style="color: red">21.53万</td>
+                                    <td style="color: red">72.22%</td>
+                                    <td style="color: red">8.28万</td>
+                                    <td style="color: red">27.78%</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td style="color: green">-29.81万</td>
+                                    <td style="color: green">-100%</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--财报披露-->
+                <div class="col-md-12">
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption caption-md">
+                                <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject font-blue-madison bold uppercase" style="font-size: 20px;">财报披露</span>
+                            </div>
+                            <div class="actions" style="float: right">
+                                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                    <label  data-dismiss="modal" data-toggle="modal" data-target="#Company_Details" class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                    更多</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet-body">             
+                            <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                <tr>
+                                    <th>业绩变动</th>
+                                    <th>预计净利润(元)</th>
+                                    <th>业绩变动幅度</th>
+                                    <th>业绩变动原因</th>
+                                    <th>预告类型</th>
+                                    <th>上年同期净利润(元)</th>
+                                    <th>公告日期</th>
+                                </tr>
+                                <tr>
+                                    <td>预计2017年1-12月归属于上市公司股东的净利润盈利2,641,800万元左右,同比增加58%左右</td>
+                                    <td>264.18亿</td>
+                                    <td style="color: red">58%</td>
+                                    <td>本期业绩预增的主要原因是2017年度本公司产品销量同比上年度增长。</td>
+                                    <td>预增</td>
+                                    <td>167.18亿</td>
+                                    <td>2018-01-31</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--股东增减持-->
+                <div class="col-md-12">
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption caption-md">
+                                <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject font-blue-madison bold uppercase" style="font-size: 20px;">股东增减持</span>
+                            </div>
+                            <div class="actions" style="float: right">
+                                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                    <label  data-dismiss="modal" data-toggle="modal" data-target="#Company_Details" class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                    更多</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet-body">             
+                            <table class="table table-striped table-bordered table-hover" id="sample_2">
+                                <tr>
+                                    <th rowspan="2" style="vertical-align:middle;">股东名称</th>
+                                    <th colspan="4">持股变动信息</th>
+                                    <th colspan="4">变动后持股信息</th>
+                                    <th rowspan="2" style="vertical-align:middle;">变动开始日</th>
+                                    <th rowspan="2" style="vertical-align:middle;">变动截止日</th>
+                                    <th rowspan="2" style="vertical-align:middle;">公告日</th>
+                                </tr>
+                                <tr>
+                                    <th>增减</th>
+                                    <th>变动数量(万股)</th>
+                                    <th>占总股本比例(%)</th>
+                                    <th>占流通股比例(%)</th>
+                                    <th>持股总数(万股)</th>
+                                    <th>占总股本比例(%)</th>
+                                    <th>持流通股数(万股)</th>
+                                    <th>占流通股比例(%)</th>
+                                </tr>
+                                <tr>
+                                    <td>中国贵州茅台酒厂(集团)有限责任公司</td>
+                                    <td style="color: red">增持</td>
+                                    <td>150.82</td>
+                                    <td>0.15</td>
+                                    <td>0.15</td>
+                                    <td>64361.32</td>
+                                    <td>61.99</td>
+                                    <td>64361.32</td>
+                                    <td>61.99</td>
+                                    <td>2013-09-04</td>
+                                    <td>2014-03-02</td>
+                                    <td>2014-03-04</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--股票回购-->
+                <div class="col-md-12">
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption caption-md">
+                                <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject font-blue-madison bold uppercase" style="font-size: 20px;">股票回购</span>
+                            </div>
+                            <div class="actions" style="float: right">
+                                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                    <label  data-dismiss="modal" data-toggle="modal" data-target="#Company_Details" class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                    更多</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet-body">             
+                            <table class="table table-striped table-bordered table-hover" id="sample_1">
+                                <tr>
+                                    <th>回购价格区间(元)</th>
+                                    <th>公告日前一日收盘价</th>
+                                    <th>回购数量区间(股)</th>
+                                    <th>占公告前一日流通股份比例(%)</th>
+                                    <th>占公告前一日总股本比例(%)</th>
+                                    <th>回购金额区间(元)</th>
+                                    <th>回购起始时间</th>
+                                    <th>实施进度</th>
+                                    <th>公告日期</th>
+                                </tr>
+                                <tr>
+                                    <td>29.00</td>
+                                    <td>19.68</td>
+                                    <td>172万</td>
+                                    <td>1.79</td>
+                                    <td>0.84</td>
+                                    <td>5000万</td>
+                                    <td>-</td>
+                                    <td>董事会预案</td>
+                                    <td>2018-07-31</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--股权质押-->
+                <div class="col-md-12">
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption caption-md">
+                                <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject font-blue-madison bold uppercase" style="font-size: 20px;">股权质押</span>
+                            </div>
+                            <div class="actions" style="float: right">
+                                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                    <label  data-dismiss="modal" data-toggle="modal" data-target="#Company_Details" class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                    更多</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet-body">             
+                            <table class="table table-striped table-bordered table-hover" id="sample_2">
+                                <tr>
+                                    <th>股东名称</th>
+                                    <th>最新质押笔数</th>
+                                    <th>剩余质押股数(股)</th>
+                                    <th>剩余质押股份市值(元)</th>
+                                    <th>占所持股份比例(%)</th>
+                                    <th>占总股本比例(%)</th>
+                                    <th>平仓线区间(预估)</th>
+                                    <th>预警线区间(预估)</th>
+                                    <th>更新日期</th>
+                                </tr>
+                                <tr>
+                                    <td>深圳市松禾创业投资有限公司</td>
+                                    <td>4</td>
+                                    <td>3603万</td>
+                                    <td>3.69亿</td>
+                                    <td>51.1</td>
+                                    <td>4.44</td>
+                                    <td>5.39~9.91</td>
+                                    <td>6.16~11.32</td>
+                                    <td>2018-07-31</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--限售解禁-->
+                <div class="col-md-12">
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption caption-md">
+                                <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject font-blue-madison bold uppercase" style="font-size: 20px;">限售解禁</span>
+                            </div>
+                            <div class="actions" style="float: right">
+                                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                    <label  data-dismiss="modal" data-toggle="modal" data-target="#Company_Details" class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                    更多</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet-body">             
+                            <table class="table table-striped table-bordered table-hover" id="sample_2">
+                                <tr>
+                                    <th>解禁时间</th>
+                                    <th>解禁股东数</th>
+                                    <th>解禁数量(股)</th>
+                                    <th>实际解禁数量(股)</th>
+                                    <th>未解禁数量(股)</th>
+                                    <th>实际解禁市值(元)</th>
+                                    <th>占总市值比例(%)</th>
+                                    <th>占流通市值比例(%)</th>
+                                    <th>解禁前一日收盘价(元)</th>
+                                    <th>限售股类型</th>
+                                    <th>解禁前20日涨跌幅(%)</th>
+                                    <th>解禁后20日涨跌幅(%)</th>
+                                </tr>
+                                <tr>
+                                    <td>2021-07-05</td>
+                                    <td>1</td>
+                                    <td>1.65亿</td>
+                                    <td>1.65亿</td>
+                                    <td>7250</td>
+                                    <td>34.55亿</td>
+                                    <td>10.12</td>
+                                    <td>16.69</td>
+                                    <td>20.90</td>
+                                    <td>定向增发机构配售股份</td>
+                                    <td style="color: red">24.59</td>
+                                    <td style="color: green">-12.18</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--公司公告-->
+                <div class="col-md-12">
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption caption-md">
+                                <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject font-blue-madison bold uppercase" style="font-size: 20px;">公司公告</span>
+                            </div>
+                            <div class="actions" style="float: right">
+                                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                    <label  data-dismiss="modal" data-toggle="modal" data-target="#Company_Details" class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                    更多</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet-body">             
+                            <table class="table table-striped table-bordered table-hover" id="sample_2">
+                                <tr>
+                                    <th>公告标题</th>
+                                    <th>公告类型</th>
+                                    <th>公告日期</th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left;">
+                                        <a href="http://data.eastmoney.com/notices/detail/600519/AN201807161166692890,JUU4JUI0JUI1JUU1JUI3JTlFJUU4JThDJTg1JUU1JThGJUIw.html">600519:贵州茅台2018年上半年主要经营数据公告</a>
+                                    </td>
+                                    <td>月度经营情况</td>
+                                    <td>2018-07-16</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!--公司新闻-->
+                <div class="col-md-12">
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption caption-md">
+                                <i class="icon-bar-chart theme-font hide"></i>
+                                <span class="caption-subject font-blue-madison bold uppercase" style="font-size: 20px;">公司新闻</span>
+                            </div>
+                            <div class="actions" style="float: right">
+                                <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                    <label  data-dismiss="modal" data-toggle="modal" data-target="#Company_Details" class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                    更多</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet-body">             
+                            <table class="table table-striped table-bordered table-hover" id="sample_2">
+                                <tr>
+                                    <th>新闻标题</th>
+                                    <th>日期</th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left;">
+                                        <a href="http://finance.eastmoney.com/news/11060,20180730915856096.html">陆港通复盘：北上资金沪强深弱 抢筹平安、美的</a>
+                                    </td>
+                                    <td>2018-07-30</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END CONTENT -->
+
+<div class="modal fade" id="Company_Details" data-backdrop="static" data-keyboard="false" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+         <div class="portlet light borderd">
+            <div class="portlet-title">
+                <div class="caption font-red-sunglo">
+                    <i class="fa fa-circle font-red-sunglo"></i>
+                    <span class="caption-subject bold uppercase">腾讯控股 SZ00700</span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div  class="caption">
+                    <span class="bold">指标数据</span>
+                </div>
+                <br>
+                <table class="table table-striped table-bordered table-hover" id="sample_1">
+                    <tr>
+                        <th>加权净资产收益率</th>
+                        <td>8.89%</td>
+                        <th>毛利率</th>
+                        <td>91.31%</td>
+                    </tr>
+                    <tr>
+                        <th>资产负债率</th>
+                        <td>21.77%</td>
+                        <th>营业总收入(亿元)</th>
+                        <td>183.95</td>
+                    </tr>
+                </table>
+                <br>
+                <div  class="caption">
+                    <span class="bold">公司事件</span>
+                </div>
+                <br>
+                <table class="table table-striped table-bordered table-hover" id="sample_1">
+                    <tr>
+                        <th>最新报表披露</th>
+                        <td style="width: 600px">2018年半年报将于2018-08-02披露</td>
+                        <td>2018-06-28</td>
+                    </tr>
+                    <tr>
+                        <th>最近除权除息</th>
+                        <td>2017年年报--10派109.99元(含税,扣税后98.991元) 股权登记日:2018-06-14 除权除息日:2018-06-15 派息日:2018-06-15</td>
+                        <td>2018-06-08</td>
+                    </tr>
+                    <tr>
+                        <th>最近分配方案</th>
+                        <td>2017年年报--10派109.99元(含税,扣税后98.991元)</td>
+                        <td>2018-06-08</td>
+                    </tr>
+                    <tr>
+                        <th>最近股东大会</th>
+                        <td>2017年年度股东大会将于2018年05月23日召开</td>
+                        <td>2018-04-28</td>
+                    </tr>
+                </table>
+                <br>
+                <div  class="caption">
+                    <span class="bold">公司新闻</span>
+                </div>
+                <br>
+                <div class="list-separated">
+                    <ul>
+                        <li>
+                            <samp>2018-07-30</samp>
+                            <a href="http://stock.eastmoney.com/news/1699,20180730915525634.html" target="_blank">疫苗案或加速退市常态化 这类股或凸显安全溢价！</a>
+                        </li>
+                        
+                        <li>
+                            <samp>2018-07-29</samp>
+                            <a href="http://stock.eastmoney.com/news/1699,20180729915185839.html" target="_blank">拼多多周末刷屏！创维怒怼 红蜻蜓中枪？律师、分析师...</a>
+                        </li>
+                        
+                        <li>
+                            <samp>2018-07-29</samp>
+                            <a href="http://stock.eastmoney.com/news/1699,20180729915085713.html" target="_blank">二线白马股水井坊财报藏着啥秘密：收增速放缓 经营现...</a>
+                        </li>
+                        
+                        <li>
+                            <samp>2018-07-28</samp>
+                            <a href="http://stock.eastmoney.com/news/1699,20180728915021996.html" target="_blank">古井贡的百亿梦：“举战旗”还是“放卫星”</a>
+                        </li>
+                        
+                        <li>
+                            <samp>2018-07-26</samp>
+                            <a href="http://stock.eastmoney.com/news/1699,20180726913886627.html" target="_blank">白酒股“见光死”值得警惕</a>
+                        </li>
+                    </ul>
+                </div>
+                <br>
+                <div  class="caption">
+                    <span class="bold">公司公告</span>
+                </div>
+                <br>
+                <div class="list-separated">
+                    <ul>
+                        <li>
+                            <samp>2018-07-16</samp>
+                            <a href="http://data.eastmoney.com/notices/detail/SH600519/AN201807161166692890,JUU4JUI0JUI1JUU1JUI3JTlFJUU4JThDJTg1JUU1JThGJUIw.html" target="_blank">600519:贵州茅台2018年上半年主要经营数据...</a>
+                        </li>
+                        
+                        <li>
+                            <samp>2018-07-07</samp>
+                            <a href="http://data.eastmoney.com/notices/detail/SH600519/AN201807061164332800,JUU4JUI0JUI1JUU1JUI3JTlFJUU4JThDJTg1JUU1JThGJUIw.html" target="_blank">600519:贵州茅台关于李贵胜同志不再担任副总经...</a>
+                        </li>
+                        
+                        <li>
+                            <samp>2018-06-08</samp>
+                            <a href="http://data.eastmoney.com/notices/detail/SH600519/AN201806071153798260,JUU4JUI0JUI1JUU1JUI3JTlFJUU4JThDJTg1JUU1JThGJUIw.html" target="_blank">600519:贵州茅台2017年年度权益分派实施公...</a>
+                        </li>
+                        
+                        <li>
+                            <samp>2018-05-24</samp>
+                            <a href="http://data.eastmoney.com/notices/detail/SH600519/AN201805231147750104,JUU4JUI0JUI1JUU1JUI3JTlFJUU4JThDJTg1JUU1JThGJUIw.html" target="_blank">600519:贵州茅台2017年年度股东大会的法律...</a>
+                        </li>
+                        
+                        <li>
+                            <samp>2018-05-24</samp>
+                            <a href="http://data.eastmoney.com/notices/detail/SH600519/AN201805231147750103,JUU4JUI0JUI1JUU1JUI3JTlFJUU4JThDJTg1JUU1JThGJUIw.html" target="_blank">600519:贵州茅台2017年年度股东大会决议公...</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+         </div>
+      </div>
+      <div class="modal-footer">
+        <input type="hidden" id="lead_id" />
+        <input type="hidden" id="add_type" />
+        <button aria-hidden="true" data-dismiss="modal" class="btn">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+<!-- BEGIN CORE PLUGINS -->
+<!--[if lt IE 9]>
+<script src="../../assets/global/plugins/respond.min.js"></script>
+<script src="../../assets/global/plugins/excanvas.min.js"></script> 
+<![endif]-->
+<script src="../../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="../../assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="../../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<!-- END CORE PLUGINS -->
+<!-- BEGIN PAGE LEVEL PLUGINS -->
+<script type="text/javascript" src="../../assets/global/plugins/select2/select2.min.js"></script>
+<script type="text/javascript" src="../../assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="../../assets/global/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+<script type="text/javascript" src="../../assets/global/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
+<script type="text/javascript" src="../../assets/global/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js"></script>
+<script type="text/javascript" src="../../assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+<!-- END PAGE LEVEL PLUGINS -->
+<!-- BEGIN PAGE LEVEL SCRIPTS -->
+<script src="../../assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="../../assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="../../assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="../../assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="../../assets/admin/pages/scripts/table-advanced.js"></script>
+<script>
+jQuery(document).ready(function() {       
+   Metronic.init(); // init metronic core components
+Layout.init(); // init current layout
+QuickSidebar.init(); // init quick sidebar
+Demo.init(); // init demo features
+   TableAdvanced.init();
+});
+</script>
+</body>
+<!-- END BODY -->
+</html>
