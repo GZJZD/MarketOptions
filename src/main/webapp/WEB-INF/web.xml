@@ -35,7 +35,7 @@
     </filter-mapping>
     
     <welcome-file-list>
-        <welcome-file>/Options_Function_Companys.html</welcome-file>
+        <welcome-file>/WEB-INF/pages/Options_Function_Companys.html</welcome-file>
     </welcome-file-list>
 
     <context-param>
