@@ -30,7 +30,14 @@ public class CompanyInfoController{
 			name = param;
 		}
     	List<CrawlerBasicIndex> crawlerBaisicIndexList = crawlerBaisicIndexService.selectBasicIndexByParam(code, name);
-    	model.addAttribute("crawlerBaisicIndexList",crawlerBaisicIndexList);
+    	CrawlerBasicIndex crawlerBaisicIndex = new CrawlerBasicIndex();
+    	if(!crawlerBaisicIndexList.isEmpty()) {
+    		crawlerBaisicIndex = crawlerBaisicIndexList.get(0);
+    	}else {
+    		model.addAttribute("error","没有该公司数据");
+    		return "Options_Function_Companys";
+    	}
+    	model.addAttribute("crawlerBaisicIndex",crawlerBaisicIndex);
     	return "Options_Function_CompanysInfos";
     }
 
