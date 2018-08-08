@@ -14,7 +14,6 @@
                         http://www.springframework.org/schema/tx
                         http://www.springframework.org/schema/tx/spring-tx.xsd">
     <!-- 启用AjpectJ自动代理 -->
-    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
     <!-- 第一种方式：加载一个properties文件 -->
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="order" value="12" />

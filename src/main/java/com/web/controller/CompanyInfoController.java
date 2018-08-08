@@ -7,10 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.alibaba.fastjson.JSONArray;
 import com.web.pojo.CrawlerBasicIndex;
 import com.web.service.CrawlerBasicIndexService;
-import com.web.util.json.JSONResult;
+
 
 @Controller
 @RequestMapping("/search")
