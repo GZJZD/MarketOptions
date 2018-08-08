@@ -21,10 +21,10 @@
 	</resultMap>
 	<select id="selectBasicIndexByParam" resultMap="BaseResultMap">
 		select * from crawler_basic_index where 1=1
-		<if test="sharesName!=null and sharesName!=''' ">
+		<if test="sharesName!=null and sharesName!='' ">
 			and shares_name = #{sharesName}
 		</if>
-		<if test="sharesCode!=null and sharesCode!=''' ">
+		<if test="sharesCode!=null and sharesCode!='' ">
 			and shares_code= #{sharesCode}
 		</if>
 	</select>
