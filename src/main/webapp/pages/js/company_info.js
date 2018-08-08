@@ -1,3 +1,4 @@
 $(function(){
-    alert(11);
+    //alert(window.location.search);
+    $('#sharesName').html(window.location.search);
 });
