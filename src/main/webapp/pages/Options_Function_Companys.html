@@ -289,11 +289,11 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div style="position: absolute;width:1800px;margin-top:300px;">
                     <div class="row form-group">
                       <div class="col-md-3 col-md-offset-3">
-                          <input type="text" class="form-control  input-circle" aria-describedby="basic-addon1" placeholder="请输入公司名称或代码">
+                          <input id="param" type="text" class="form-control  input-circle" aria-describedby="basic-addon1" placeholder="请输入公司名称或代码">
                       </div>
                         <div class="col-md-2">
                             <button aria-hidden="true" data-dismiss="modal" data-toggle="modal" data-target="#Calculator" class="btn btn-circle green-haze">算报价</button>
-                            <a target="_blank" href="pages/Options_Function_CompanysInfos.html" class="btn btn-circle blue" id="CompanysInfos">查信息</a>
+                            <a onclick="searchCompanyInfo();" class="btn btn-circle blue" id="CompanysInfos">查信息</a>
                         </div>
                     </div>
                 </div>
@@ -419,6 +419,16 @@ QuickSidebar.init(); // init quick sidebar
 Demo.init(); // init demo features
    TableAdvanced.init();
 });
+
+function searchCompanyInfo(){
+	var param = jQuery("#param").val();
+	if(param!=null && param!=""){
+		window.open('Options_Function_CompanysInfos.html?param='+param,'_blank');
+	}else{
+		alert("公司名称不能为空！");
+	}
+	
+}
 </script>
 </body>
 <!-- END BODY -->
