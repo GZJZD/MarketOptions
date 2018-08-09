@@ -37,6 +37,8 @@ public class CrawlerBasicIndex {
 	private String peRatio;
 	//市净率
 	private String pbRatio;
+	//时间
+	private String date;
 	
 	public Long getId() {
 		return id;
@@ -133,6 +135,12 @@ public class CrawlerBasicIndex {
 	}
 	public void setPbRatio(String pbRatio) {
 		this.pbRatio = pbRatio;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
 	}
 	
 }

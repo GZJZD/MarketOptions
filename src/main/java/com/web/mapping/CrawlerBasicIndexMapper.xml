@@ -18,14 +18,18 @@
 		<result column="quantity_ratio" property="quantityRatio"/>
 		<result column="pe_ratio" property="peRatio"/>
 		<result column="pb_ratio" property="pbRatio"/>
+		<result column="date" property="date"/>
 	</resultMap>
 	<select id="selectBasicIndexByParam" resultMap="BaseResultMap">
-		select * from crawler_basic_index where 1=1
-		<if test="sharesName!=null and sharesName!='' ">
-			and shares_name = #{sharesName}
-		</if>
-		<if test="sharesCode!=null and sharesCode!='' ">
-			and shares_code= #{sharesCode}
-		</if>
+		select * from crawler_basic_index
+		<where>
+			<if test="sharesName!=null and sharesName!='' ">
+				and shares_name = #{sharesName}
+			</if>
+			<if test="sharesCode!=null and sharesCode!='' ">
+				and shares_code= #{sharesCode}
+			</if>
+		</where>
+		order by date desc
 	</select>
 </mapper>
