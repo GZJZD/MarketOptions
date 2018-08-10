@@ -114,14 +114,136 @@ function moreMainInflux(){
 	var detail_code = $('#sharesName').html()+" "+$('#sharesCode').html()
 	$('#detail_code').html(detail_code);
 	$('#detail_name').html("主力流入");
-	var content = "";
-	content+="<tr><th rowspan='2' style='vertical-align:middle;'>日期</th>";
-	content+="<th colspan='2'>主力净流入</th><th colspan='2'>超大单净流入</th>";
-	content+="<th colspan='2'>大单净流入</th><th colspan='2'>中单净流入</th>";
-	content+="<th colspan='2'>小单净流入</th></tr>";
-	content+="<tr><th>净额</th><th>净占比</th><th>净额</th><th>净占比</th><th>净额</th>";
-	content+="<th>净占比</th><th>净额</th><th>净占比</th><th>净额</th><th>净占比</th></tr>";
-	$('#sample_3').html(content);
+//	var content = "";
+//	content+="<tr><th rowspan='2' style='vertical-align:middle;'>日期</th>";
+//	content+="<th colspan='2'>主力净流入</th><th colspan='2'>超大单净流入</th>";
+//	content+="<th colspan='2'>大单净流入</th><th colspan='2'>中单净流入</th>";
+//	content+="<th colspan='2'>小单净流入</th></tr>";
+//	content+="<tr><th>净额</th><th>净占比</th><th>净额</th><th>净占比</th><th>净额</th>";
+//	content+="<th>净占比</th><th>净额</th><th>净占比</th><th>净额</th><th>净占比</th></tr>";
+//	$('#sample_3').html(content);
+	var columns = [
+		[
+			{
+				field: 'date',
+				title: "日期",
+				valign:"middle",
+				align:"center",
+				colspan: 1,
+				rowspan: 2
+			},
+			{
+				title: "主力净流入",
+				valign:"middle",
+				align:"center",
+				colspan: 2,
+				rowspan: 1
+			},
+			{
+				title: "超大单净流入",
+				valign:"middle",
+				align:"center",
+				colspan: 2,
+				rowspan: 1
+			},
+			{
+				title: "大单净流入",
+				valign:"middle",
+				align:"center",
+				colspan: 2,
+				rowspan: 1
+			},
+			{
+				title: "中单净流入",
+				valign:"middle",
+				align:"center",
+				colspan: 2,
+				rowspan: 1
+			},
+			{
+				title: "小单净流入",
+				valign:"middle",
+				align:"center",
+				colspan: 2,
+				rowspan: 1
+			}
+		],
+		[
+			{
+				field: 'mainInfluxPrice',
+				title: '净额',
+				valign:"middle",
+				align:"center"
+			},
+			{
+				field: 'mainInfluxRatio',
+				title: '净占比',
+				valign:"middle",
+				align:"center"
+			},{
+				field: 'hugeInfluxPrice',
+				title: '净额',
+				valign:"middle",
+				align:"center"
+			},
+			{
+				field: 'hugeInfluxRatio',
+				title: '净占比',
+				valign:"middle",
+				align:"center"
+			},{
+				field: 'largeInfluxPrice',
+				title: '净额',
+				valign:"middle",
+				align:"center"
+			},
+			{
+				field: 'largeInfluxRatio',
+				title: '净占比',
+				valign:"middle",
+				align:"center"
+			},
+			{
+				field: 'middleInfluxPrice',
+				title: '净额',
+				valign:"middle",
+				align:"center"
+			},
+			{
+				field: 'middleInfluxRatio',
+				title: '净占比',
+				valign:"middle",
+				align:"center"
+			},
+			{
+				field: 'smallInfluxPrice',
+				title: '净额',
+				valign:"middle",
+				align:"center"
+			},
+			{
+				field: 'smallInfluxRatio',
+				title: '净占比',
+				valign:"middle",
+				align:"center"
+			}
+		]
+	];
+	$('#sample_3').bootstrapTable({
+		url: "http://localhost:8080/search/getMainInflux.Action",
+		dataType: "json",
+		method: 'get',
+//		uniqueId: "id",      //每一行的唯一标识，一般为主键列
+		cache: false,
+		pagination: true, 
+		sortable: false,      //是否启用排序  
+	    sortOrder: "asc",     //排序方式  
+	    //: queryParams,//传递参数（*）  
+	    pageNumber:1,      //初始化加载第一页，默认第一页  
+	    pageSize: 20,      //每页的记录行数（*）  
+	    pageList: [10, 20, 50, 100],
+		columns:columns
+	});
 }
 
 //财报披露更多
