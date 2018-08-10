@@ -109,6 +109,23 @@ function setMainInflux(data){
 	$("#mainInflux").after(content);
 }
 
+//主力流入更多
+function moreMainInflux(){
+	var detail_code = $('#sharesName').html()+" "+$('#sharesCode').html()
+	$('#detail_code').html(detail_code);
+	$('#detail_name').html("主力流入");
+	var content = "";
+	content+="<tr><th rowspan='2' style='vertical-align:middle;'>日期</th>";
+	content+="<th colspan='2'>主力净流入</th><th colspan='2'>超大单净流入</th>";
+	content+="<th colspan='2'>大单净流入</th><th colspan='2'>中单净流入</th>";
+	content+="<th colspan='2'>小单净流入</th></tr>";
+	content+="<tr><th>净额</th><th>净占比</th><th>净额</th><th>净占比</th><th>净额</th>";
+	content+="<th>净占比</th><th>净额</th><th>净占比</th><th>净额</th><th>净占比</th></tr>";
+	$('#sample_3').html(content);
+}
+
+//财报披露更多
+
 
 //用来截取参数
 function getQueryString(name) {
