@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.web.dao.CrawlerShareholdersDao">
-
     <resultMap id="BaseResultMap" type="com.web.pojo.CrawlerShareholders">
         <id column="id" property="id"/>
         <result column="shares_name" property="sharesName"/>
@@ -19,4 +18,16 @@
         <result column="end_date" property="endDate"/>
         <result column="announcement_date" property="announcementDate"/>
     </resultMap>
+    <select id="selectShareholdersByParam" resultMap="BaseResultMap">
+		select * from crawler_shareholders
+		<where>
+			<if test="sharesName!=null and sharesName!='' ">
+				and shares_name = #{sharesName}
+			</if>
+			<if test="sharesCode!=null and sharesCode!='' ">
+				and shares_code= #{sharesCode}
+			</if>
+		</where>
+		order by announcement_date desc
+	</select>
 </mapper>

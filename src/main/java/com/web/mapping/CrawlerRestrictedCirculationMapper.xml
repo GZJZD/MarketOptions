@@ -18,4 +18,16 @@
         <result column="before_range" property="beforeRange"/>
         <result column="after_range" property="afterRange"/>
     </resultMap>
+    <select id="selectRestrictedCirculationByParam" resultMap="BaseResultMap">
+		select * from crawler_restricted_circulation
+		<where>
+			<if test="sharesName!=null and sharesName!='' ">
+				and shares_name = #{sharesName}
+			</if>
+			<if test="sharesCode!=null and sharesCode!='' ">
+				and shares_code= #{sharesCode}
+			</if>
+		</where>
+		order by circulation_date desc
+	</select>
 </mapper>

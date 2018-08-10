@@ -10,4 +10,16 @@
 		<result column="announce_type" property="announceType"/>
 		<result column="announce_date" property="announceDate"/>
 	</resultMap>
+	<select id="selectCompanyAnnounceByParam" resultMap="BaseResultMap">
+		select * from crawler_company_announcement
+		<where>
+			<if test="sharesName!=null and sharesName!='' ">
+				and shares_name = #{sharesName}
+			</if>
+			<if test="sharesCode!=null and sharesCode!='' ">
+				and shares_code= #{sharesCode}
+			</if>
+		</where>
+		order by announce_date desc
+	</select>
 </mapper>

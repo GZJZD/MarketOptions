@@ -17,5 +17,17 @@
         <result column="small_influx_ratio" property="smallInfluxRatio"/>
         <result column="date" property="date"/>
     </resultMap>
+    <select id="selectMainInfluxByParam" resultMap="BaseResultMap">
+		select * from crawler_main_influx
+		<where>
+			<if test="sharesName!=null and sharesName!='' ">
+				and shares_name = #{sharesName}
+			</if>
+			<if test="sharesCode!=null and sharesCode!='' ">
+				and shares_code= #{sharesCode}
+			</if>
+		</where>
+		order by date desc
+	</select>
 </mapper>
 

@@ -15,5 +15,17 @@
         <result column="impl_progress" property="implProgress"/>
         <result column="announcement_date" property="announcementDate"/>
     </resultMap>
+    <select id="selectShareBuybackByParam" resultMap="BaseResultMap">
+		select * from crawler_share_buyback
+		<where>
+			<if test="sharesName!=null and sharesName!='' ">
+				and shares_name = #{sharesName}
+			</if>
+			<if test="sharesCode!=null and sharesCode!='' ">
+				and shares_code= #{sharesCode}
+			</if>
+		</where>
+		order by announcement_date desc
+	</select>
 </mapper>
 

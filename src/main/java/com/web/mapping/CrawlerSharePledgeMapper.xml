@@ -15,4 +15,16 @@
         <result column="warning_position_range" property="warningPositionRange"/>
         <result column="update_date" property="updateDate"/>
     </resultMap>
+    <select id="selectSharePledgeByParam" resultMap="BaseResultMap">
+		select * from crawler_share_pledge
+		<where>
+			<if test="sharesName!=null and sharesName!='' ">
+				and shares_name = #{sharesName}
+			</if>
+			<if test="sharesCode!=null and sharesCode!='' ">
+				and shares_code= #{sharesCode}
+			</if>
+		</where>
+		order by update_date desc
+	</select>
 </mapper>

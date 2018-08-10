@@ -13,4 +13,16 @@
 		<result column="previous_year_profit" property="previousYearProfit"/>
 		<result column="announcement_date" property="announcementDate"/>
 	</resultMap>
+	<select id="selectFinancialDisclosureByParam" resultMap="BaseResultMap">
+		select * from crawler_financial_disclosure
+		<where>
+			<if test="sharesName!=null and sharesName!='' ">
+				and shares_name = #{sharesName}
+			</if>
+			<if test="sharesCode!=null and sharesCode!='' ">
+				and shares_code= #{sharesCode}
+			</if>
+		</where>
+		order by announcement_date desc
+	</select>
 </mapper>
