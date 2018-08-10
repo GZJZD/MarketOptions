@@ -1,9 +1,11 @@
 $(function(){
-	var param = getQueryString("param");
+
+    var param = Params();
+
     //查询基本指标
-    searchBasicIndex(param);
+    searchBasicIndex(param["param"]);//这里的productId就url 中所带这的参数
     //查询主力流入
-    searchMainInflux(param);
+    searchMainInflux(param["param"]);
     //查询财报披露
 //    searchFinancialDisclosure(param);
 //	//查询股东增减持
@@ -22,6 +24,8 @@ $(function(){
 
 //查询基本指标
 function searchBasicIndex(param){
+
+
 	 $.ajax({
 	 	url:"http://localhost:8080/search/getBasicIndex.Action",
 	    type:'POST', //GET
@@ -94,10 +98,20 @@ function setMainInflux(data){
 
 //用来截取参数
 function getQueryString(name) {
+
     var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+
     var r = window.location.search.substr(1).match(reg);
     if (r != null) {
         return unescape(r[2]);
     }
     return null;
+}
+
+
+//.Net索引器求值方式
+function Params(){
+    var pattern = /(\w*)=([a-zA-Z0-9\u4e00-\u9fa5]+)/ig, params = {};//定义正则表达式和一个空对象
+    decodeURIComponent(window.location.href, true).replace(pattern, function(a, b, c){ params[b] = c; });
+    return params;
 }

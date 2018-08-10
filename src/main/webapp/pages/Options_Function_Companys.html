@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <!--
 Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.4
 Version: 4.0.2
@@ -422,8 +423,10 @@ Demo.init(); // init demo features
 
 function searchCompanyInfo(){
 	var param = jQuery("#param").val();
+
 	if(param!=null && param!=""){
 		window.open('pages/Options_Function_CompanysInfos.html?param='+param,'_blank');
+
 	}else{
 		alert("公司名称不能为空！");
 	}
