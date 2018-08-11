@@ -6,7 +6,7 @@ $(function(){
     //查询主力流入
     searchMainInflux(param);
     //查询财报披露
-//    searchFinancialDisclosure(param);
+    searchFinancialDisclosure(param);
 //	//查询股东增减持
 //    searchShareholders(param);
 //    //查询股票回购
@@ -114,14 +114,6 @@ function moreMainInflux(){
 	var detail_code = $('#sharesName').html()+" "+$('#sharesCode').html()
 	$('#detail_code').html(detail_code);
 	$('#detail_name').html("主力流入");
-//	var content = "";
-//	content+="<tr><th rowspan='2' style='vertical-align:middle;'>日期</th>";
-//	content+="<th colspan='2'>主力净流入</th><th colspan='2'>超大单净流入</th>";
-//	content+="<th colspan='2'>大单净流入</th><th colspan='2'>中单净流入</th>";
-//	content+="<th colspan='2'>小单净流入</th></tr>";
-//	content+="<tr><th>净额</th><th>净占比</th><th>净额</th><th>净占比</th><th>净额</th>";
-//	content+="<th>净占比</th><th>净额</th><th>净占比</th><th>净额</th><th>净占比</th></tr>";
-//	$('#sample_3').html(content);
 	var columns = [
 		[
 			{
@@ -230,23 +222,68 @@ function moreMainInflux(){
 		]
 	];
 	$('#sample_3').bootstrapTable({
-		url: "http://localhost:8080/search/getMainInflux.Action",
+		url: "http://localhost:8080/search/getMainInflux.Action?param="+$('#sharesName').html(),
 		dataType: "json",
 		method: 'get',
-//		uniqueId: "id",      //每一行的唯一标识，一般为主键列
 		cache: false,
 		pagination: true, 
 		sortable: false,      //是否启用排序  
 	    sortOrder: "asc",     //排序方式  
-	    //: queryParams,//传递参数（*）  
 	    pageNumber:1,      //初始化加载第一页，默认第一页  
-	    pageSize: 20,      //每页的记录行数（*）  
+	    pageSize: 10,      //每页的记录行数（*）  
 	    pageList: [10, 20, 50, 100],
 		columns:columns
 	});
 }
 
+//查询财报披露
+function searchFinancialDisclosure(param){
+	$.ajax({
+	 	url:"http://localhost:8080/search/getFinancialDisclosure.Action",
+	    type:'POST', //GET
+	    async:true,    //或false,是否异步
+	    data:{
+	    	param:param
+	    },
+	    dataType:'json',    //返回的数据格式：json/xml/html/script/jsonp/text
+	    beforeSend:function(xhr){},
+	    success:function(data,textStatus,jqXHR){
+	    	//设置财报披露
+	    	setFinancialDisclosure(data);
+	    },
+	    error:function(xhr,textStatus){},
+	    complete:function(){}
+	 })
+}
+
+//设置财报披露
+function setFinancialDisclosure(data){
+	var content="";
+	$.each(data, function (index, ele) {
+		content+="<tr>";
+		content+="<td>"+ele.date+"</td>";
+		content+="<td>"+ele.mainInfluxPrice+"</td>";
+		content+="<td style='color: red'>"+ele.mainInfluxRatio+"</td>";
+		content+="<td style='color: red'>"+ele.hugeInfluxPrice+"</td>";
+		content+="<td style='color: red'>"+ele.hugeInfluxRatio+"</td>";
+		content+="<td style='color: red'>"+ele.largeInfluxPrice+"</td>";
+		content+="<td style='color: red'>"+ele.largeInfluxRatio+"</td>";
+		content+="<td>"+ele.middleInfluxPrice+"</td>";
+		content+="<td>"+ele.middleInfluxRatio+"</td>";
+		content+="<td style='color: green'>"+ele.smallInfluxPrice+"</td>";
+		content+="<td style='color: green'>"+ele.smallInfluxRatio+"</td>";
+		content+="</tr>";
+		if(index==2){
+			return false;
+		}
+    });
+	$("#financialDisclosure").after(content);
+}
+
 //财报披露更多
+function moreFinancialDisclosure(){
+	
+}
 
 
 //用来截取参数
