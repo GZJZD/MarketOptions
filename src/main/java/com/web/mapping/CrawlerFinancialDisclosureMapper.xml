@@ -6,8 +6,10 @@
 		<result column="shares_name" property="sharesName"/>
 		<result column="shares_code" property="sharesCode"/>
 		<result column="performance_change" property="performanceChange"/>
-		<result column="expected_net_profit" property="expectedNetProfit"/>
-		<result column="performance_change_ratio" property="performanceChangeRatio"/>
+		<result column="expected_net_profit_left" property="expectedNetProfitLeft"/>
+		<result column="expected_net_profit_right" property="expectedNetProfitRight"/>
+		<result column="performance_change_ratio_left" property="performanceChangeRatioLeft"/>
+		<result column="performance_change_ratio_right" property="performanceChangeRatioRight"/>
 		<result column="performance_change_reason" property="performanceChangeReason"/>
 		<result column="preview_type" property="previewType"/>
 		<result column="previous_year_profit" property="previousYearProfit"/>
