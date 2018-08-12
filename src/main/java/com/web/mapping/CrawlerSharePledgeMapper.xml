@@ -11,8 +11,10 @@
         <result column="pledge_price" property="pledgePrice"/>
         <result column="share_ratio" property="shareRatio"/>
         <result column="equity_datio" property="equityDatio"/>
-        <result column="close_position_range" property="closePositionRange"/>
-        <result column="warning_position_range" property="warningPositionRange"/>
+        <result column="close_position_range_left" property="closePositionRangeLeft"/>
+        <result column="close_position_range_right" property="closePositionRangeRight"/>
+        <result column="warning_position_range_left" property="warningPositionRangeLeft"/>
+        <result column="warning_position_range_right" property="warningPositionRangeRight"/>
         <result column="update_date" property="updateDate"/>
     </resultMap>
     <select id="selectSharePledgeByParam" resultMap="BaseResultMap">

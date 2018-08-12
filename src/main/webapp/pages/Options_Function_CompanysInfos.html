@@ -324,7 +324,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="col-md-1">
                                     <div class="stat-left">
                                         <div class="stat-number">
-                                            <div class="number" style="color:green">
+                                            <div class="number">
                                                 <strong><span id="latestPrice"></span></strong>
                                             </div>
                                             <i class=icon-long-arrow-down></i>
@@ -334,10 +334,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="col-md-1">
                                     <div class="stat-right">
                                         <div class="stat-number">
-                                            <div class="title" style="color:green">
+                                            <div class="title">
                                                 <span id="riseFallPirce"></span>
                                             </div>
-                                            <div class="title" style="color:green">
+                                            <div class="title">
                                                 <span id="riseFallRatio"></span>
                                             </div>
                                         </div>
@@ -348,9 +348,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <tbody>
                                         <tr>
                                             <th>今开：</th>
-                                            <td id="gt1" style="color:red"></td>
+                                            <td id="gt1"></td>
                                             <th>最高：</th>
-                                            <td id="gt2" style="color:red"></td>
+                                            <td id="gt2"></td>
                                             <th>换手：</th>
                                             <td id="gt4"></td>
                                             <th>成交量：</th>
@@ -362,7 +362,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <th>昨收：</th>
                                             <td id="gt8"></td>
                                             <th>最低：</th>
-                                            <td id="gt9" style="color:green"></td>
+                                            <td id="gt9"></td>
                                             <th>量比：</th>
                                             <td id="gt11"></td>
                                             <th>成交额：</th>
@@ -431,7 +431,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="actions" style="float: right">
                                 <div class="btn-group btn-group-devided" data-toggle="buttons">
                                     <label data-dismiss="modal" data-toggle="modal" data-target="#Company_Details"
-                                           class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                           class="btn btn-transparent grey-salsa btn-circle btn-sm " onclick="moreFinancialDisclosure();">
                                         更多</label>
                                 </div>
                             </div>
@@ -462,7 +462,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="actions" style="float: right">
                                 <div class="btn-group btn-group-devided" data-toggle="buttons">
                                     <label data-dismiss="modal" data-toggle="modal" data-target="#Company_Details"
-                                           class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                           class="btn btn-transparent grey-salsa btn-circle btn-sm " onclick="moreShareholders();">
                                         更多</label>
                                 </div>
                             </div>
@@ -502,14 +502,14 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="actions" style="float: right">
                                 <div class="btn-group btn-group-devided" data-toggle="buttons">
                                     <label data-dismiss="modal" data-toggle="modal" data-target="#Company_Details"
-                                           class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                           class="btn btn-transparent grey-salsa btn-circle btn-sm " onclick="moreShareBuyback();">
                                         更多</label>
                                 </div>
                             </div>
                         </div>
                         <div class="portlet-body">
                             <table class="table table-striped table-bordered table-hover" id="sample_1">
-                                <tr>
+                                <tr id="shareBuyback">
                                     <th>回购价格区间(元)</th>
                                     <th>公告日前一日收盘价</th>
                                     <th>回购数量区间(股)</th>
@@ -519,17 +519,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <th>回购起始时间</th>
                                     <th>实施进度</th>
                                     <th>公告日期</th>
-                                </tr>
-                                <tr>
-                                    <td>29.00</td>
-                                    <td>19.68</td>
-                                    <td>172万</td>
-                                    <td>1.79</td>
-                                    <td>0.84</td>
-                                    <td>5000万</td>
-                                    <td>-</td>
-                                    <td>董事会预案</td>
-                                    <td>2018-07-31</td>
                                 </tr>
                             </table>
                         </div>
@@ -546,14 +535,14 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="actions" style="float: right">
                                 <div class="btn-group btn-group-devided" data-toggle="buttons">
                                     <label data-dismiss="modal" data-toggle="modal" data-target="#Company_Details"
-                                           class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                           class="btn btn-transparent grey-salsa btn-circle btn-sm " onclick="moreSharePledge();">
                                         更多</label>
                                 </div>
                             </div>
                         </div>
                         <div class="portlet-body">
                             <table class="table table-striped table-bordered table-hover" id="sample_1">
-                                <tr>
+                                <tr id="sharePledge">
                                     <th>股东名称</th>
                                     <th>最新质押笔数</th>
                                     <th>剩余质押股数(股)</th>
@@ -563,17 +552,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <th>平仓线区间(预估)</th>
                                     <th>预警线区间(预估)</th>
                                     <th>更新日期</th>
-                                </tr>
-                                <tr>
-                                    <td>深圳市松禾创业投资有限公司</td>
-                                    <td>4</td>
-                                    <td>3603万</td>
-                                    <td>3.69亿</td>
-                                    <td>51.1</td>
-                                    <td>4.44</td>
-                                    <td>5.39~9.91</td>
-                                    <td>6.16~11.32</td>
-                                    <td>2018-07-31</td>
                                 </tr>
                             </table>
                         </div>
@@ -590,14 +568,14 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="actions" style="float: right">
                                 <div class="btn-group btn-group-devided" data-toggle="buttons">
                                     <label data-dismiss="modal" data-toggle="modal" data-target="#Company_Details"
-                                           class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                           class="btn btn-transparent grey-salsa btn-circle btn-sm " onclick="moreRestrictedCirculation();">
                                         更多</label>
                                 </div>
                             </div>
                         </div>
                         <div class="portlet-body">
                             <table class="table table-striped table-bordered table-hover" id="sample_1">
-                                <tr>
+                                <tr id="restrictedCirculation">
                                     <th>解禁时间</th>
                                     <th>解禁股东数</th>
                                     <th>解禁数量(股)</th>
@@ -610,20 +588,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <th>限售股类型</th>
                                     <th>解禁前20日涨跌幅(%)</th>
                                     <th>解禁后20日涨跌幅(%)</th>
-                                </tr>
-                                <tr>
-                                    <td>2021-07-05</td>
-                                    <td>1</td>
-                                    <td>1.65亿</td>
-                                    <td>1.65亿</td>
-                                    <td>7250</td>
-                                    <td>34.55亿</td>
-                                    <td>10.12</td>
-                                    <td>16.69</td>
-                                    <td>20.90</td>
-                                    <td>定向增发机构配售股份</td>
-                                    <td style="color: red">24.59</td>
-                                    <td style="color: green">-12.18</td>
                                 </tr>
                             </table>
                         </div>
@@ -640,24 +604,17 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="actions" style="float: right">
                                 <div class="btn-group btn-group-devided" data-toggle="buttons">
                                     <label data-dismiss="modal" data-toggle="modal" data-target="#Company_Details"
-                                           class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                           class="btn btn-transparent grey-salsa btn-circle btn-sm " onclick="moreCompanyAnnounce();">
                                         更多</label>
                                 </div>
                             </div>
                         </div>
                         <div class="portlet-body">
                             <table class="table table-striped table-bordered table-hover" id="sample_1">
-                                <tr>
+                                <tr id="companyAnnounce">
                                     <th>公告标题</th>
                                     <th>公告类型</th>
                                     <th>公告日期</th>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: left;">
-                                        <a href="http://data.eastmoney.com/notices/detail/600519/AN201807161166692890,JUU4JUI0JUI1JUU1JUI3JTlFJUU4JThDJTg1JUU1JThGJUIw.html">600519:贵州茅台2018年上半年主要经营数据公告</a>
-                                    </td>
-                                    <td>月度经营情况</td>
-                                    <td>2018-07-16</td>
                                 </tr>
                             </table>
                         </div>
@@ -674,23 +631,16 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="actions" style="float: right">
                                 <div class="btn-group btn-group-devided" data-toggle="buttons">
                                     <label data-dismiss="modal" data-toggle="modal" data-target="#Company_Details"
-                                           class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                           class="btn btn-transparent grey-salsa btn-circle btn-sm " onclick="moreCompanyNews();">
                                         更多</label>
                                 </div>
                             </div>
                         </div>
                         <div class="portlet-body">
                             <table class="table table-striped table-bordered table-hover" id="sample_1">
-                                <tr>
+                                <tr id="companyNews">
                                     <th>新闻标题</th>
                                     <th>日期</th>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: left;">
-                                        <a href="http://finance.eastmoney.com/news/11060,20180730915856096.html">陆港通复盘：北上资金沪强深弱
-                                            抢筹平安、美的</a>
-                                    </td>
-                                    <td>2018-07-30</td>
                                 </tr>
                             </table>
                         </div>
@@ -720,51 +670,6 @@ License: You must have a valid license purchased only from themeforest(the above
                             </div>
                             <br>
                             <table class="table table-striped table-bordered table-hover" id="sample_3">
-                                <tr>
-                                    <th>业绩变动</th>
-                                    <th>预计净利润(元)</th>
-                                    <th>业绩变动幅度</th>
-                                    <th>业绩变动原因</th>
-                                    <th>预告类型</th>
-                                    <th>上年同期净利润(元)</th>
-                                    <th>公告日期</th>
-                                </tr>
-                                <tr>
-                                    <td>预计2017年1-12月归属于上市公司股东的净利润盈利2,641,800万元左右,同比增加58%左右</td>
-                                    <td>264.18亿</td>
-                                    <td style="color: red">58%</td>
-                                    <td>本期业绩预增的主要原因是2017年度本公司产品销量同比上年度增长。</td>
-                                    <td>预增</td>
-                                    <td>167.18亿</td>
-                                    <td>2018-01-31</td>
-                                </tr>
-                                <tr>
-                                    <td>预计2017年1-12月归属于上市公司股东的净利润盈利2,641,800万元左右,同比增加58%左右</td>
-                                    <td>264.18亿</td>
-                                    <td style="color: red">58%</td>
-                                    <td>本期业绩预增的主要原因是2017年度本公司产品销量同比上年度增长。</td>
-                                    <td>预增</td>
-                                    <td>167.18亿</td>
-                                    <td>2018-01-31</td>
-                                </tr>
-                                <tr>
-                                    <td>预计2017年1-12月归属于上市公司股东的净利润盈利2,641,800万元左右,同比增加58%左右</td>
-                                    <td>264.18亿</td>
-                                    <td style="color: red">58%</td>
-                                    <td>本期业绩预增的主要原因是2017年度本公司产品销量同比上年度增长。</td>
-                                    <td>预增</td>
-                                    <td>167.18亿</td>
-                                    <td>2018-01-31</td>
-                                </tr>
-                                <tr>
-                                    <td>预计2017年1-12月归属于上市公司股东的净利润盈利2,641,800万元左右,同比增加58%左右</td>
-                                    <td>264.18亿</td>
-                                    <td style="color: red">58%</td>
-                                    <td>本期业绩预增的主要原因是2017年度本公司产品销量同比上年度增长。</td>
-                                    <td>预增</td>
-                                    <td>167.18亿</td>
-                                    <td>2018-01-31</td>
-                                </tr>
                             </table>
                         </div>
                     </div>

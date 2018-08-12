@@ -14,8 +14,12 @@ public class CrawlerSharePledge {
     private String pledgePrice;//剩余质押股份市值(元)
     private String shareRatio;//占所持股份比例(%)
     private String equityDatio;//占总股本比例(%)
-    private String closePositionRange;//平仓线区间(预估)
-    private String warningPositionRange;//预警线区间(预估)
+    //平仓线区间(预估)
+    private String closePositionRangeLeft;
+    private String closePositionRangeRight;
+    //预警线区间(预估)
+    private String warningPositionRangeLeft;
+    private String warningPositionRangeRight;
     private String updateDate;//更新日期
 
 
@@ -92,22 +96,39 @@ public class CrawlerSharePledge {
         this.equityDatio = equityDatio;
     }
 
-    public String getClosePositionRange() {
-        return closePositionRange;
-    }
+    public String getClosePositionRangeLeft() {
+		return closePositionRangeLeft;
+	}
 
-    public void setClosePositionRange(String closePositionRange) {
-        this.closePositionRange = closePositionRange;
-    }
+	public void setClosePositionRangeLeft(String closePositionRangeLeft) {
+		this.closePositionRangeLeft = closePositionRangeLeft;
+	}
 
-    public String getWarningPositionRange() {
-        return warningPositionRange;
-    }
+	public String getClosePositionRangeRight() {
+		return closePositionRangeRight;
+	}
 
-    public void setWarningPositionRange(String warningPositionRange) {
-        this.warningPositionRange = warningPositionRange;
-    }
-    public String getUpdateDate() {
+	public void setClosePositionRangeRight(String closePositionRangeRight) {
+		this.closePositionRangeRight = closePositionRangeRight;
+	}
+
+	public String getWarningPositionRangeLeft() {
+		return warningPositionRangeLeft;
+	}
+
+	public void setWarningPositionRangeLeft(String warningPositionRangeLeft) {
+		this.warningPositionRangeLeft = warningPositionRangeLeft;
+	}
+
+	public String getWarningPositionRangeRight() {
+		return warningPositionRangeRight;
+	}
+
+	public void setWarningPositionRangeRight(String warningPositionRangeRight) {
+		this.warningPositionRangeRight = warningPositionRangeRight;
+	}
+
+	public String getUpdateDate() {
         return updateDate;
     }
 
