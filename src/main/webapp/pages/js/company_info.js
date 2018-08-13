@@ -52,11 +52,11 @@ function setBasicIndex(data){
 	$('#sharesCode').html("("+data.sharesCode+")");
 	if(data.latestPrice-data.closePrice>=0){
 		$('#latestPrice').html(data.latestPrice).css("color","red");
-		$('#riseFallRatio').html(data.riseFallRatio).css("color","red");
+		$('#riseFallRatio').html(data.riseFallRatio+"%").css("color","red");
 		$('#riseFallPirce').html(data.riseFallPirce).css("color","red");
 	}else{
 		$('#latestPrice').html(data.latestPrice).css("color","green");
-		$('#riseFallRatio').html(data.riseFallRatio).css("color","green");
+		$('#riseFallRatio').html(data.riseFallRatio+"%").css("color","green");
 		$('#riseFallPirce').html(data.riseFallPirce).css("color","green");
 	}
 	if(data.openPrice-data.closePrice>=0){
@@ -609,7 +609,11 @@ function setShareBuyback(data){
 	var content="";
 	$.each(data, function (index, ele) {
 		content+="<tr>";
-		content+="<td>"+ele.buybackPriceRange+"</td>";
+		if(ele.buybackPriceRangeLeft==ele.buybackPriceRangeRight){
+			content+="<td>"+ele.buybackPriceRangeLeft+"</td>";
+		}else{
+			content+="<td>"+ele.buybackPriceRangeLeft+"~"+ele.buybackPriceRangeRight+"</td>";
+		}
 		content+="<td>"+ele.closePrice+"</td>";
 		if(ele.buybackVolumnRangeLeft==ele.buybackVolumnRangeRight){
 			content+="<td>"+ele.buybackVolumnRangeLeft+"</td>";
@@ -650,10 +654,17 @@ function moreShareBuyback(){
 	var columns = [
 		[
 			{
-				field: 'buybackPriceRange',
+				field: 'buybackPriceRangeLeft',
 				title: '回购价格区间(元)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter: function (value, row, index) {
+	                if(row.buybackPriceRangeRight==value){
+	                    return value;
+	                }else {
+	                    return value+"~"+row.buybackPriceRangeRight;
+	                }
+	            }
 			},
 			{
 				field: 'closePrice',

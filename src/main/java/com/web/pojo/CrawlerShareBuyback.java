@@ -7,7 +7,9 @@ public class CrawlerShareBuyback {
     private Long id;
     private String sharesName; //股票名称
     private String sharesCode; //股票代码
-    private String buybackPriceRange; //回购价格区间
+    //回购价格区间
+    private String buybackPriceRangeLeft;
+    private String buybackPriceRangeRight; 
     private String closePrice; //公告日前一日收盘价
     //回购数量区间(股)
     private String buybackVolumnRangeLeft;
@@ -49,15 +51,23 @@ public class CrawlerShareBuyback {
         this.sharesCode = sharesCode;
     }
 
-    public String getBuybackPriceRange() {
-        return buybackPriceRange;
-    }
+    public String getBuybackPriceRangeLeft() {
+		return buybackPriceRangeLeft;
+	}
 
-    public void setBuybackPriceRange(String buybackPriceRange) {
-        this.buybackPriceRange = buybackPriceRange;
-    }
+	public void setBuybackPriceRangeLeft(String buybackPriceRangeLeft) {
+		this.buybackPriceRangeLeft = buybackPriceRangeLeft;
+	}
 
-    public String getClosePrice() {
+	public String getBuybackPriceRangeRight() {
+		return buybackPriceRangeRight;
+	}
+
+	public void setBuybackPriceRangeRight(String buybackPriceRangeRight) {
+		this.buybackPriceRangeRight = buybackPriceRangeRight;
+	}
+
+	public String getClosePrice() {
         return closePrice;
     }
 

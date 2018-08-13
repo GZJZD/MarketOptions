@@ -5,7 +5,8 @@
         <id column="id" property="id"/>
         <result column="shares_name" property="sharesName"/>
         <result column="shares_code" property="sharesCode"/>
-        <result column="buyback_price_range" property="buybackPriceRange"/>
+        <result column="buyback_price_range_left" property="buybackPriceRangeLeft"/>
+        <result column="buyback_price_range_right" property="buybackPriceRangeRight"/>
         <result column="close_price" property="closePrice"/>
         <result column="buyback_volumn_range_left" property="buybackVolumnRangeLeft"/>
         <result column="buyback_volumn_range_right" property="buybackVolumnRangeRight"/>
