@@ -1,5 +1,4 @@
 $(function(){
-
     var param = Params()["param"];
     //查询基本指标
     searchBasicIndex(param);//这里的productId就url 中所带这的参数
@@ -19,6 +18,9 @@ $(function(){
     searchCompanyAnnounce(param);
     //查询公司新闻
     searchCompanyNews(param);
+    /*setInterval(() => {
+    	searchBasicIndex(param);
+	}, 5000);*/
 });
 
 //查询基本指标
@@ -207,7 +209,7 @@ function moreMainInflux(){
 		[
 			{
 				field: 'mainInfluxPrice',
-				title: '净额',
+				title: '净额(万元)',
 				valign:"middle",
 				align:"center"
 			},
@@ -218,7 +220,7 @@ function moreMainInflux(){
 				align:"center"
 			},{
 				field: 'hugeInfluxPrice',
-				title: '净额',
+				title: '净额(万元)',
 				valign:"middle",
 				align:"center"
 			},
@@ -229,7 +231,7 @@ function moreMainInflux(){
 				align:"center"
 			},{
 				field: 'largeInfluxPrice',
-				title: '净额',
+				title: '净额(万元)',
 				valign:"middle",
 				align:"center"
 			},
@@ -241,7 +243,7 @@ function moreMainInflux(){
 			},
 			{
 				field: 'middleInfluxPrice',
-				title: '净额',
+				title: '净额(万元)',
 				valign:"middle",
 				align:"center"
 			},
@@ -253,7 +255,7 @@ function moreMainInflux(){
 			},
 			{
 				field: 'smallInfluxPrice',
-				title: '净额',
+				title: '净额(万元)',
 				valign:"middle",
 				align:"center"
 			},
