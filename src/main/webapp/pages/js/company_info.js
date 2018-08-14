@@ -174,7 +174,10 @@ function moreMainInflux(){
 				valign:"middle",
 				align:"center",
 				colspan: 1,
-				rowspan: 2
+				rowspan: 2,
+				footerFormatter: function (value) {
+					return "合计";
+			    }
 			},
 			{
 				title: "主力净流入",
@@ -217,7 +220,14 @@ function moreMainInflux(){
 				field: 'mainInfluxPrice',
 				title: '净额(万元)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				footerFormatter: function (value) {
+			        var count = 0;
+			        for (var i in value) {
+			            count += parseFloat(value[i].mainInfluxPrice);
+			        }
+			        return count;
+			    }
 			},
 			{
 				field: 'mainInfluxRatio',
@@ -279,6 +289,7 @@ function moreMainInflux(){
 		dataType: "json",
 		method: 'get',
 		cache: false,
+		showFooter: true,
 		pagination: true, 
 		sortable: false,      //是否启用排序  
 	    sortOrder: "asc",     //排序方式  
