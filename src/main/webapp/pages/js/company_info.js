@@ -21,6 +21,12 @@ $(function(){
     /*setInterval(() => {
     	searchBasicIndex(param);
 	}, 5000);*/
+    $(document).keyup(function(event) {  
+        if (event.keyCode == 13) { 
+            //执行操作
+        	searchCompanyInfo();
+        }  
+    });
 });
 
 //查询基本指标

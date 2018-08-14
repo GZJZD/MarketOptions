@@ -167,7 +167,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                     <ul class="sub-menu">
                         <li class="active open">
-                            <a href="Options_Function_Companys.html">
+                            <a href="/pages/Options_Function_Companys.html">
                                 <i class="icon-fire"></i>
                                 公司信息
                             </a>
@@ -195,7 +195,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li>
-                        <a href="Options_Function_Companys.html">Function_Companys</a>
+                        <a href="/pages/Options_Function_Companys.html">Function_Companys</a>
                         <i class="fa fa-angle-right"></i>
                     </li>
                 </ul>
@@ -206,7 +206,10 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="col-md-12 news-page">
                     <div>
                         <h1><span id="sharesName"></span>
-                            <span id="sharesCode" style="font-size: 16px"></span></h1>
+                            <span id="sharesCode" style="font-size: 16px"></span>
+                            <a onclick="searchCompanyInfo();" class="btn btn-circle blue" id="CompanysInfos" style="float:right;">查信息</a>
+                            <input id="param" type="text" class="form-control  input-circle"  style="width:15%;float:right;" placeholder="请输入公司名称或代码">
+                    </h1>
                     </div>
                     <hr>
                 </div>
@@ -580,8 +583,8 @@ License: You must have a valid license purchased only from themeforest(the above
             </div>
         </div>
     </div>
-
 </div>
+
 <!-- END CONTAINER -->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 <!-- BEGIN CORE PLUGINS -->
@@ -631,6 +634,14 @@ License: You must have a valid license purchased only from themeforest(the above
         Demo.init(); // init demo features
         //TableAdvanced.init();
     });
+    function searchCompanyInfo(){
+    	var param = jQuery("#param").val();
+    	if(param!=null && param!=""){
+    		window.open('/pages/Options_Function_CompanysInfos.html?param='+param,'_blank');
+    	}else{
+    		alert("公司名称不能为空！");
+    	}
+    }
 </script>
 
 </body>

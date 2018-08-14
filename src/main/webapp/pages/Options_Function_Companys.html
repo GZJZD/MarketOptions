@@ -145,7 +145,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                     <ul class="sub-menu">
                         <li  class="active open">
-                            <a href="http://localhost:8080/pages/Options_Function_Companys.html">
+                            <a href="/pages/Options_Function_Companys.html">
                                 <i class="icon-fire"></i>
                                 公司信息
                             </a>
@@ -175,7 +175,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li>
-                        <a href="Options_Function_Companys.html">Function_Companys</a>
+                        <a href="/pages/Options_Function_Companys.html">Function_Companys</a>
                         <i class="fa fa-angle-right"></i>
                     </li>
                 </ul>
@@ -189,7 +189,6 @@ License: You must have a valid license purchased only from themeforest(the above
                           <input id="param" type="text" class="form-control  input-circle" aria-describedby="basic-addon1" placeholder="请输入公司名称或代码">
                       </div>
                         <div class="col-md-2">
-                            <button aria-hidden="true" data-dismiss="modal" data-toggle="modal" data-target="#Calculator" class="btn btn-circle green-haze">算报价</button>
                             <a onclick="searchCompanyInfo();" class="btn btn-circle blue" id="CompanysInfos">查信息</a>
                         </div>
                     </div>
@@ -198,82 +197,6 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
     </div>
     <!-- END CONTENT -->
-
-    <div class="modal fade" id="Calculator" data-backdrop="static" data-keyboard="false" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
-            <h4 class="modal-title">报价计算器</h4></div>
-          <div class="modal-body">
-              <table class="table table-striped table-bordered table-hover" id="sample_1">
-                    <tr>
-                        <th style="width: 100px;vertical-align:middle;">名称</th>
-                        <td colspan="2" style="width: 100px;vertical-align:middle;">贵州茅台 600519</td>
-                        <th style="width: 100px;vertical-align:middle;">价格(元)</th>
-                        <td style="width: 100px;vertical-align:middle;">
-                            <input type="number" class="form-control" placeholder="719.21">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>期限</th>
-                        <td>2周</td>
-                        <td>1个月</td>
-                        <td>3个月</td>
-                        <td>6个月</td>
-                    </tr>
-                    <tr>
-                        <th style="vertical-align:middle;">权利金比例(%)</th>
-                        <td>
-                            <input type="number" class="form-control" placeholder=""></td>
-                        <td>
-                            <input type="number" class="form-control" placeholder=""></td>
-                        <td>
-                            <input type="number" class="form-control" placeholder=""></td>
-                        <td>
-                            <input type="number" class="form-control" placeholder=""></td>
-                    </tr>
-                    <tr>
-                        <th class="tooltips" data-toggle="tooltip" data-placement="right" title="应交权利金=权利金比例*价格">
-                            应交权利金 <i class="fa fa-info-circle"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th class="tooltips" data-toggle="tooltip" data-placement="right" title="打和点价格=权利金比例*价格+价格">
-                            打和点价格 <i class="fa fa-info-circle"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th class="tooltips" data-toggle="tooltip" data-placement="right" title="距离涨幅=（打和点价格-价格）/价格">
-                            距离涨幅(%) <i class="fa fa-info-circle"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th>最近波幅(%)</th>
-                        <td>6.41</td>
-                        <td>8.56</td>
-                        <td>12.74</td>
-                        <td>16.54</td>
-                    </tr>
-
-              </table>
-          </div>
-          <div class="modal-footer">
-            <a target="_blank" href="pages/Options_Function_CompanysInfos.html" class="btn btn-primary id="CompanysInfos">公司信息</a>
-            <button aria-hidden="true" data-dismiss="modal" data-toggle="modal" class="btn">关闭</button>
-          </div>
-        </div>
-      </div>
-    </div>
 </div>
 <!-- END CONTAINER -->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
@@ -321,14 +244,11 @@ Demo.init(); // init demo features
 
 function searchCompanyInfo(){
 	var param = jQuery("#param").val();
-
 	if(param!=null && param!=""){
-		window.open('pages/Options_Function_CompanysInfos.html?param='+param,'_blank');
-
+		window.open('/pages/Options_Function_CompanysInfos.html?param='+param,'_blank');
 	}else{
 		alert("公司名称不能为空！");
 	}
-	
 }
 </script>
 </body>
