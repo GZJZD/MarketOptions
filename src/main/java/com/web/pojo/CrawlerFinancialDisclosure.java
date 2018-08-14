@@ -14,9 +14,11 @@ public class CrawlerFinancialDisclosure {
 	//业绩变动
 	private String performanceChange;
 	//预计净利润
-	private String expectedNetProfit;
+	private String expectedNetProfitLeft;
+	private String expectedNetProfitRight;
 	//业绩变动幅度
-	private String performanceChangeRatio;
+	private String performanceChangeRatioLeft;
+	private String performanceChangeRatioRight;
 	//业绩变动原因
 	private String performanceChangeReason;
 	//预告类型
@@ -50,17 +52,29 @@ public class CrawlerFinancialDisclosure {
 	public void setPerformanceChange(String performanceChange) {
 		this.performanceChange = performanceChange;
 	}
-	public String getExpectedNetProfit() {
-		return expectedNetProfit;
+	public String getExpectedNetProfitLeft() {
+		return expectedNetProfitLeft;
 	}
-	public void setExpectedNetProfit(String expectedNetProfit) {
-		this.expectedNetProfit = expectedNetProfit;
+	public void setExpectedNetProfitLeft(String expectedNetProfitLeft) {
+		this.expectedNetProfitLeft = expectedNetProfitLeft;
 	}
-	public String getPerformanceChangeRatio() {
-		return performanceChangeRatio;
+	public String getExpectedNetProfitRight() {
+		return expectedNetProfitRight;
 	}
-	public void setPerformanceChangeRatio(String performanceChangeRatio) {
-		this.performanceChangeRatio = performanceChangeRatio;
+	public void setExpectedNetProfitRight(String expectedNetProfitRight) {
+		this.expectedNetProfitRight = expectedNetProfitRight;
+	}
+	public String getPerformanceChangeRatioLeft() {
+		return performanceChangeRatioLeft;
+	}
+	public void setPerformanceChangeRatioLeft(String performanceChangeRatioLeft) {
+		this.performanceChangeRatioLeft = performanceChangeRatioLeft;
+	}
+	public String getPerformanceChangeRatioRight() {
+		return performanceChangeRatioRight;
+	}
+	public void setPerformanceChangeRatioRight(String performanceChangeRatioRight) {
+		this.performanceChangeRatioRight = performanceChangeRatioRight;
 	}
 	public String getPerformanceChangeReason() {
 		return performanceChangeReason;

@@ -5,12 +5,17 @@
         <id column="id" property="id"/>
         <result column="shares_name" property="sharesName"/>
         <result column="shares_code" property="sharesCode"/>
-        <result column="buyback_price_range" property="buybackPriceRange"/>
+        <result column="buyback_price_range_left" property="buybackPriceRangeLeft"/>
+        <result column="buyback_price_range_right" property="buybackPriceRangeRight"/>
         <result column="close_price" property="closePrice"/>
-        <result column="buyback_volumn_range" property="buybackVolumnRange"/>
-        <result column="share_ratio" property="shareRatio"/>
-        <result column="equity_ratio" property="equityRatio"/>
-        <result column="buyback_amount_range" property="buybackAmountRange"/>
+        <result column="buyback_volumn_range_left" property="buybackVolumnRangeLeft"/>
+        <result column="buyback_volumn_range_right" property="buybackVolumnRangeRight"/>
+        <result column="share_ratio_left" property="shareRatioLeft"/>
+        <result column="share_ratio_right" property="shareRatioRight"/>
+        <result column="equity_ratio_left" property="equityRatioLeft"/>
+        <result column="equity_ratio_right" property="equityRatioRight"/>
+        <result column="buyback_amount_range_left" property="buybackAmountRangeLeft"/>
+        <result column="buyback_amount_range_right" property="buybackAmountRangeRight"/>
         <result column="begin_date" property="beginDate"/>
         <result column="impl_progress" property="implProgress"/>
         <result column="announcement_date" property="announcementDate"/>

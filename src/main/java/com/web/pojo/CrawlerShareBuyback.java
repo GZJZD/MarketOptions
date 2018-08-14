@@ -7,12 +7,22 @@ public class CrawlerShareBuyback {
     private Long id;
     private String sharesName; //股票名称
     private String sharesCode; //股票代码
-    private String buybackPriceRange; //回购价格区间
+    //回购价格区间
+    private String buybackPriceRangeLeft;
+    private String buybackPriceRangeRight; 
     private String closePrice; //公告日前一日收盘价
-    private String buybackVolumnRange;//回购数量区间(股)
-    private String shareRatio;//占公告前一日流通股份比例(%)
-    private String equityRatio;//占公告前一日总股本比例(%)
-    private String buybackAmountRange;//回购金额区间(元)
+    //回购数量区间(股)
+    private String buybackVolumnRangeLeft;
+    private String buybackVolumnRangeRight;
+    //占公告前一日流通股份比例(%)
+    private String shareRatioLeft;
+    private String shareRatioRight;
+    //占公告前一日总股本比例(%)
+    private String equityRatioLeft;
+    private String equityRatioRight;
+    //回购金额区间(元)
+    private String buybackAmountRangeLeft;
+    private String buybackAmountRangeRight;
     private String beginDate;//回购起始时间
     private String implProgress;//实施进度
     private String announcementDate;//公告日期
@@ -41,15 +51,23 @@ public class CrawlerShareBuyback {
         this.sharesCode = sharesCode;
     }
 
-    public String getBuybackPriceRange() {
-        return buybackPriceRange;
-    }
+    public String getBuybackPriceRangeLeft() {
+		return buybackPriceRangeLeft;
+	}
 
-    public void setBuybackPriceRange(String buybackPriceRange) {
-        this.buybackPriceRange = buybackPriceRange;
-    }
+	public void setBuybackPriceRangeLeft(String buybackPriceRangeLeft) {
+		this.buybackPriceRangeLeft = buybackPriceRangeLeft;
+	}
 
-    public String getClosePrice() {
+	public String getBuybackPriceRangeRight() {
+		return buybackPriceRangeRight;
+	}
+
+	public void setBuybackPriceRangeRight(String buybackPriceRangeRight) {
+		this.buybackPriceRangeRight = buybackPriceRangeRight;
+	}
+
+	public String getClosePrice() {
         return closePrice;
     }
 
@@ -57,39 +75,71 @@ public class CrawlerShareBuyback {
         this.closePrice = closePrice;
     }
 
-    public String getBuybackVolumnRange() {
-        return buybackVolumnRange;
-    }
+    public String getBuybackVolumnRangeLeft() {
+		return buybackVolumnRangeLeft;
+	}
 
-    public void setBuybackVolumnRange(String buybackVolumnRange) {
-        this.buybackVolumnRange = buybackVolumnRange;
-    }
+	public void setBuybackVolumnRangeLeft(String buybackVolumnRangeLeft) {
+		this.buybackVolumnRangeLeft = buybackVolumnRangeLeft;
+	}
 
-    public String getShareRatio() {
-        return shareRatio;
-    }
+	public String getBuybackVolumnRangeRight() {
+		return buybackVolumnRangeRight;
+	}
 
-    public void setShareRatio(String shareRatio) {
-        this.shareRatio = shareRatio;
-    }
+	public void setBuybackVolumnRangeRight(String buybackVolumnRangeRight) {
+		this.buybackVolumnRangeRight = buybackVolumnRangeRight;
+	}
 
-    public String getEquityRatio() {
-        return equityRatio;
-    }
+	public String getShareRatioLeft() {
+		return shareRatioLeft;
+	}
 
-    public void setEquityRatio(String equityRatio) {
-        this.equityRatio = equityRatio;
-    }
+	public void setShareRatioLeft(String shareRatioLeft) {
+		this.shareRatioLeft = shareRatioLeft;
+	}
 
-    public String getBuybackAmountRange() {
-        return buybackAmountRange;
-    }
+	public String getShareRatioRight() {
+		return shareRatioRight;
+	}
 
-    public void setBuybackAmountRange(String buybackAmountRange) {
-        this.buybackAmountRange = buybackAmountRange;
-    }
+	public void setShareRatioRight(String shareRatioRight) {
+		this.shareRatioRight = shareRatioRight;
+	}
 
-    public String getBeginDate() {
+	public String getEquityRatioLeft() {
+		return equityRatioLeft;
+	}
+
+	public void setEquityRatioLeft(String equityRatioLeft) {
+		this.equityRatioLeft = equityRatioLeft;
+	}
+
+	public String getEquityRatioRight() {
+		return equityRatioRight;
+	}
+
+	public void setEquityRatioRight(String equityRatioRight) {
+		this.equityRatioRight = equityRatioRight;
+	}
+
+	public String getBuybackAmountRangeLeft() {
+		return buybackAmountRangeLeft;
+	}
+
+	public void setBuybackAmountRangeLeft(String buybackAmountRangeLeft) {
+		this.buybackAmountRangeLeft = buybackAmountRangeLeft;
+	}
+
+	public String getBuybackAmountRangeRight() {
+		return buybackAmountRangeRight;
+	}
+
+	public void setBuybackAmountRangeRight(String buybackAmountRangeRight) {
+		this.buybackAmountRangeRight = buybackAmountRangeRight;
+	}
+
+	public String getBeginDate() {
         return beginDate;
     }
 

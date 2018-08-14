@@ -159,79 +159,6 @@ License: You must have a valid license purchased only from themeforest(the above
             <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
             <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
             <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                <li class="">
-                    <a href="javascript:;">
-                        <i class="icon-user"></i>
-                        <span class="title">订单管理</span>
-                        <span class="selected"></span>
-                        <span class="arrow open"></span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="">
-                            <a href="Options_Orders_Inquires.html">
-                                <i class="icon-trophy"></i>
-                                询价订单
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="">
-                    <a href="javascript:;">
-                        <i class="icon-tag"></i>
-                        <span class="title">财务管理</span>
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="">
-                            <a href="Options_Finance_Desposit.html">
-                                <i class="icon-tag"></i>
-                                保证金确认
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="Options_Finance_Reports.html">
-                                <i class="icon-umbrella"></i>
-                                财务报表
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="">
-                    <a href="javascript:;">
-                        <i class="icon-bell"></i>
-                        <span class="title">风控管理</span>
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="">
-                            <a href="Options_Risk_RiskManagement.html">
-                                <i class="icon-magnet"></i>
-                                风控数据
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="">
-                    <a href="javascript:;">
-                        <i class="icon-plane"></i>
-                        <span class="title">配置信息</span>
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="">
-                            <a href="Options_Config_Quote.html">
-                                <i class="icon-folder"></i>
-                                报价信息
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="Options_Config_Hedge.html">
-                                <i class="icon-film"></i>
-                                对冲配置
-                            </a>
-                        </li>
-                    </ul>
-                </li>
                 <li class="active open">
                     <a href="javascript:;">
                         <i class="icon-compass"></i>
@@ -240,30 +167,9 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                     <ul class="sub-menu">
                         <li class="active open">
-                            <a href="Options_Function_Companys.html">
+                            <a href="/pages/Options_Function_Companys.html">
                                 <i class="icon-fire"></i>
                                 公司信息
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="">
-                    <a href="javascript:;">
-                        <i class="icon-settings"></i>
-                        <span class="title">系统管理</span>
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li class="">
-                            <a href="Options_Setting_Users.html">
-                                <i class="icon-folder"></i>
-                                用户管理
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="Options_Setting_Posts.html">
-                                <i class="icon-flag"></i>
-                                岗位管理
                             </a>
                         </li>
                     </ul>
@@ -289,24 +195,21 @@ License: You must have a valid license purchased only from themeforest(the above
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li>
-                        <a href="Options_Function_Companys.html">Function_Companys</a>
+                        <a href="/pages/Options_Function_Companys.html">Function_Companys</a>
                         <i class="fa fa-angle-right"></i>
                     </li>
                 </ul>
             </div>
 
             <!-- END PAGE HEADER-->
-            <div class="note note-success note-bordered">
-                <p>
-                    <span class="label label-danger">NOTE:</span>文档尚未产出:<a href="http://baidu.com"
-                                                                           target="_blank">文档地址</a>
-                </p>
-            </div>
             <div class="row">
                 <div class="col-md-12 news-page">
                     <div>
                         <h1><span id="sharesName"></span>
-                            <span id="sharesCode" style="font-size: 16px"></span></h1>
+                            <span id="sharesCode" style="font-size: 16px"></span>
+                            <a onclick="searchCompanyInfo();" class="btn btn-circle blue" id="CompanysInfos" style="float:right;">查信息</a>
+                            <input id="param" type="text" class="form-control  input-circle"  style="width:15%;float:right;" placeholder="请输入公司名称或代码">
+                    </h1>
                     </div>
                     <hr>
                 </div>
@@ -324,7 +227,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="col-md-1">
                                     <div class="stat-left">
                                         <div class="stat-number">
-                                            <div class="number" style="color:green">
+                                            <div class="number">
                                                 <strong><span id="latestPrice"></span></strong>
                                             </div>
                                             <i class=icon-long-arrow-down></i>
@@ -334,10 +237,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="col-md-1">
                                     <div class="stat-right">
                                         <div class="stat-number">
-                                            <div class="title" style="color:green">
+                                            <div class="title">
                                                 <span id="riseFallPirce"></span>
                                             </div>
-                                            <div class="title" style="color:green">
+                                            <div class="title">
                                                 <span id="riseFallRatio"></span>
                                             </div>
                                         </div>
@@ -348,9 +251,9 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <tbody>
                                         <tr>
                                             <th>今开：</th>
-                                            <td id="gt1" style="color:red"></td>
+                                            <td id="gt1"></td>
                                             <th>最高：</th>
-                                            <td id="gt2" style="color:red"></td>
+                                            <td id="gt2"></td>
                                             <th>换手：</th>
                                             <td id="gt4"></td>
                                             <th>成交量：</th>
@@ -362,7 +265,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <th>昨收：</th>
                                             <td id="gt8"></td>
                                             <th>最低：</th>
-                                            <td id="gt9" style="color:green"></td>
+                                            <td id="gt9"></td>
                                             <th>量比：</th>
                                             <td id="gt11"></td>
                                             <th>成交额：</th>
@@ -405,15 +308,15 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <th colspan="2">小单净流入</th>
                                 </tr>
                                 <tr id="mainInflux">
-                                    <th>净额</th>
+                                    <th>净额(万元)</th>
                                     <th>净占比</th>
-                                    <th>净额</th>
+                                    <th>净额(万元)</th>
                                     <th>净占比</th>
-                                    <th>净额</th>
+                                    <th>净额(万元)</th>
                                     <th>净占比</th>
-                                    <th>净额</th>
+                                    <th>净额(万元)</th>
                                     <th>净占比</th>
-                                    <th>净额</th>
+                                    <th>净额(万元)</th>
                                     <th>净占比</th>
                                 </tr>
                             </table>
@@ -431,14 +334,14 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="actions" style="float: right">
                                 <div class="btn-group btn-group-devided" data-toggle="buttons">
                                     <label data-dismiss="modal" data-toggle="modal" data-target="#Company_Details"
-                                           class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                           class="btn btn-transparent grey-salsa btn-circle btn-sm " onclick="moreFinancialDisclosure();">
                                         更多</label>
                                 </div>
                             </div>
                         </div>
                         <div class="portlet-body">
                             <table class="table table-striped table-bordered table-hover" id="sample_1">
-                                <tr>
+                                <tr id="financialDisclosure">
                                     <th>业绩变动</th>
                                     <th>预计净利润(元)</th>
                                     <th>业绩变动幅度</th>
@@ -446,15 +349,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <th>预告类型</th>
                                     <th>上年同期净利润(元)</th>
                                     <th>公告日期</th>
-                                </tr>
-                                <tr>
-                                    <td>预计2017年1-12月归属于上市公司股东的净利润盈利2,641,800万元左右,同比增加58%左右</td>
-                                    <td>264.18亿</td>
-                                    <td style="color: red">58%</td>
-                                    <td>本期业绩预增的主要原因是2017年度本公司产品销量同比上年度增长。</td>
-                                    <td>预增</td>
-                                    <td>167.18亿</td>
-                                    <td>2018-01-31</td>
                                 </tr>
                             </table>
                         </div>
@@ -471,7 +365,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="actions" style="float: right">
                                 <div class="btn-group btn-group-devided" data-toggle="buttons">
                                     <label data-dismiss="modal" data-toggle="modal" data-target="#Company_Details"
-                                           class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                           class="btn btn-transparent grey-salsa btn-circle btn-sm " onclick="moreShareholders();">
                                         更多</label>
                                 </div>
                             </div>
@@ -486,7 +380,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <th rowspan="2" style="vertical-align:middle;">变动截止日</th>
                                     <th rowspan="2" style="vertical-align:middle;">公告日</th>
                                 </tr>
-                                <tr>
+                                <tr id="shareholders">
                                     <th>增减</th>
                                     <th>变动数量(万股)</th>
                                     <th>占总股本比例(%)</th>
@@ -495,20 +389,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <th>占总股本比例(%)</th>
                                     <th>持流通股数(万股)</th>
                                     <th>占流通股比例(%)</th>
-                                </tr>
-                                <tr>
-                                    <td>中国贵州茅台酒厂(集团)有限责任公司</td>
-                                    <td style="color: red">增持</td>
-                                    <td>150.82</td>
-                                    <td>0.15</td>
-                                    <td>0.15</td>
-                                    <td>64361.32</td>
-                                    <td>61.99</td>
-                                    <td>64361.32</td>
-                                    <td>61.99</td>
-                                    <td>2013-09-04</td>
-                                    <td>2014-03-02</td>
-                                    <td>2014-03-04</td>
                                 </tr>
                             </table>
                         </div>
@@ -525,14 +405,14 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="actions" style="float: right">
                                 <div class="btn-group btn-group-devided" data-toggle="buttons">
                                     <label data-dismiss="modal" data-toggle="modal" data-target="#Company_Details"
-                                           class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                           class="btn btn-transparent grey-salsa btn-circle btn-sm " onclick="moreShareBuyback();">
                                         更多</label>
                                 </div>
                             </div>
                         </div>
                         <div class="portlet-body">
                             <table class="table table-striped table-bordered table-hover" id="sample_1">
-                                <tr>
+                                <tr id="shareBuyback">
                                     <th>回购价格区间(元)</th>
                                     <th>公告日前一日收盘价</th>
                                     <th>回购数量区间(股)</th>
@@ -542,17 +422,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <th>回购起始时间</th>
                                     <th>实施进度</th>
                                     <th>公告日期</th>
-                                </tr>
-                                <tr>
-                                    <td>29.00</td>
-                                    <td>19.68</td>
-                                    <td>172万</td>
-                                    <td>1.79</td>
-                                    <td>0.84</td>
-                                    <td>5000万</td>
-                                    <td>-</td>
-                                    <td>董事会预案</td>
-                                    <td>2018-07-31</td>
                                 </tr>
                             </table>
                         </div>
@@ -569,14 +438,14 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="actions" style="float: right">
                                 <div class="btn-group btn-group-devided" data-toggle="buttons">
                                     <label data-dismiss="modal" data-toggle="modal" data-target="#Company_Details"
-                                           class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                           class="btn btn-transparent grey-salsa btn-circle btn-sm " onclick="moreSharePledge();">
                                         更多</label>
                                 </div>
                             </div>
                         </div>
                         <div class="portlet-body">
                             <table class="table table-striped table-bordered table-hover" id="sample_1">
-                                <tr>
+                                <tr id="sharePledge">
                                     <th>股东名称</th>
                                     <th>最新质押笔数</th>
                                     <th>剩余质押股数(股)</th>
@@ -586,17 +455,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <th>平仓线区间(预估)</th>
                                     <th>预警线区间(预估)</th>
                                     <th>更新日期</th>
-                                </tr>
-                                <tr>
-                                    <td>深圳市松禾创业投资有限公司</td>
-                                    <td>4</td>
-                                    <td>3603万</td>
-                                    <td>3.69亿</td>
-                                    <td>51.1</td>
-                                    <td>4.44</td>
-                                    <td>5.39~9.91</td>
-                                    <td>6.16~11.32</td>
-                                    <td>2018-07-31</td>
                                 </tr>
                             </table>
                         </div>
@@ -613,14 +471,14 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="actions" style="float: right">
                                 <div class="btn-group btn-group-devided" data-toggle="buttons">
                                     <label data-dismiss="modal" data-toggle="modal" data-target="#Company_Details"
-                                           class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                           class="btn btn-transparent grey-salsa btn-circle btn-sm " onclick="moreRestrictedCirculation();">
                                         更多</label>
                                 </div>
                             </div>
                         </div>
                         <div class="portlet-body">
                             <table class="table table-striped table-bordered table-hover" id="sample_1">
-                                <tr>
+                                <tr id="restrictedCirculation">
                                     <th>解禁时间</th>
                                     <th>解禁股东数</th>
                                     <th>解禁数量(股)</th>
@@ -633,20 +491,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <th>限售股类型</th>
                                     <th>解禁前20日涨跌幅(%)</th>
                                     <th>解禁后20日涨跌幅(%)</th>
-                                </tr>
-                                <tr>
-                                    <td>2021-07-05</td>
-                                    <td>1</td>
-                                    <td>1.65亿</td>
-                                    <td>1.65亿</td>
-                                    <td>7250</td>
-                                    <td>34.55亿</td>
-                                    <td>10.12</td>
-                                    <td>16.69</td>
-                                    <td>20.90</td>
-                                    <td>定向增发机构配售股份</td>
-                                    <td style="color: red">24.59</td>
-                                    <td style="color: green">-12.18</td>
                                 </tr>
                             </table>
                         </div>
@@ -663,24 +507,17 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="actions" style="float: right">
                                 <div class="btn-group btn-group-devided" data-toggle="buttons">
                                     <label data-dismiss="modal" data-toggle="modal" data-target="#Company_Details"
-                                           class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                           class="btn btn-transparent grey-salsa btn-circle btn-sm " onclick="moreCompanyAnnounce();">
                                         更多</label>
                                 </div>
                             </div>
                         </div>
                         <div class="portlet-body">
                             <table class="table table-striped table-bordered table-hover" id="sample_1">
-                                <tr>
+                                <tr id="companyAnnounce">
                                     <th>公告标题</th>
                                     <th>公告类型</th>
                                     <th>公告日期</th>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: left;">
-                                        <a href="http://data.eastmoney.com/notices/detail/600519/AN201807161166692890,JUU4JUI0JUI1JUU1JUI3JTlFJUU4JThDJTg1JUU1JThGJUIw.html">600519:贵州茅台2018年上半年主要经营数据公告</a>
-                                    </td>
-                                    <td>月度经营情况</td>
-                                    <td>2018-07-16</td>
                                 </tr>
                             </table>
                         </div>
@@ -697,23 +534,16 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="actions" style="float: right">
                                 <div class="btn-group btn-group-devided" data-toggle="buttons">
                                     <label data-dismiss="modal" data-toggle="modal" data-target="#Company_Details"
-                                           class="btn btn-transparent grey-salsa btn-circle btn-sm ">
+                                           class="btn btn-transparent grey-salsa btn-circle btn-sm " onclick="moreCompanyNews();">
                                         更多</label>
                                 </div>
                             </div>
                         </div>
                         <div class="portlet-body">
                             <table class="table table-striped table-bordered table-hover" id="sample_1">
-                                <tr>
+                                <tr id="companyNews">
                                     <th>新闻标题</th>
                                     <th>日期</th>
-                                </tr>
-                                <tr>
-                                    <td style="text-align: left;">
-                                        <a href="http://finance.eastmoney.com/news/11060,20180730915856096.html">陆港通复盘：北上资金沪强深弱
-                                            抢筹平安、美的</a>
-                                    </td>
-                                    <td>2018-07-30</td>
                                 </tr>
                             </table>
                         </div>
@@ -743,51 +573,6 @@ License: You must have a valid license purchased only from themeforest(the above
                             </div>
                             <br>
                             <table class="table table-striped table-bordered table-hover" id="sample_3">
-                                <tr>
-                                    <th>业绩变动</th>
-                                    <th>预计净利润(元)</th>
-                                    <th>业绩变动幅度</th>
-                                    <th>业绩变动原因</th>
-                                    <th>预告类型</th>
-                                    <th>上年同期净利润(元)</th>
-                                    <th>公告日期</th>
-                                </tr>
-                                <tr>
-                                    <td>预计2017年1-12月归属于上市公司股东的净利润盈利2,641,800万元左右,同比增加58%左右</td>
-                                    <td>264.18亿</td>
-                                    <td style="color: red">58%</td>
-                                    <td>本期业绩预增的主要原因是2017年度本公司产品销量同比上年度增长。</td>
-                                    <td>预增</td>
-                                    <td>167.18亿</td>
-                                    <td>2018-01-31</td>
-                                </tr>
-                                <tr>
-                                    <td>预计2017年1-12月归属于上市公司股东的净利润盈利2,641,800万元左右,同比增加58%左右</td>
-                                    <td>264.18亿</td>
-                                    <td style="color: red">58%</td>
-                                    <td>本期业绩预增的主要原因是2017年度本公司产品销量同比上年度增长。</td>
-                                    <td>预增</td>
-                                    <td>167.18亿</td>
-                                    <td>2018-01-31</td>
-                                </tr>
-                                <tr>
-                                    <td>预计2017年1-12月归属于上市公司股东的净利润盈利2,641,800万元左右,同比增加58%左右</td>
-                                    <td>264.18亿</td>
-                                    <td style="color: red">58%</td>
-                                    <td>本期业绩预增的主要原因是2017年度本公司产品销量同比上年度增长。</td>
-                                    <td>预增</td>
-                                    <td>167.18亿</td>
-                                    <td>2018-01-31</td>
-                                </tr>
-                                <tr>
-                                    <td>预计2017年1-12月归属于上市公司股东的净利润盈利2,641,800万元左右,同比增加58%左右</td>
-                                    <td>264.18亿</td>
-                                    <td style="color: red">58%</td>
-                                    <td>本期业绩预增的主要原因是2017年度本公司产品销量同比上年度增长。</td>
-                                    <td>预增</td>
-                                    <td>167.18亿</td>
-                                    <td>2018-01-31</td>
-                                </tr>
                             </table>
                         </div>
                     </div>
@@ -798,8 +583,8 @@ License: You must have a valid license purchased only from themeforest(the above
             </div>
         </div>
     </div>
-
 </div>
+
 <!-- END CONTAINER -->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
 <!-- BEGIN CORE PLUGINS -->
@@ -849,6 +634,14 @@ License: You must have a valid license purchased only from themeforest(the above
         Demo.init(); // init demo features
         //TableAdvanced.init();
     });
+    function searchCompanyInfo(){
+    	var param = jQuery("#param").val();
+    	if(param!=null && param!=""){
+    		window.open('/pages/Options_Function_CompanysInfos.html?param='+param,'_blank');
+    	}else{
+    		alert("公司名称不能为空！");
+    	}
+    }
 </script>
 
 </body>

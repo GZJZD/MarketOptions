@@ -137,85 +137,6 @@ License: You must have a valid license purchased only from themeforest(the above
             <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
             <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
             <ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
-                <li class="">
-                    <a href="javascript:;">
-                        <i class="icon-user"></i>
-                        <span class="title">订单管理</span>
-                        <span class="selected"></span>
-                        <span class="arrow open"></span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li  class="">
-                            <a href="Options_Orders_Inquires.html">
-                                <i class="icon-trophy"></i>
-                                询价订单
-                            </a>
-                        </li>
-                        <li  class="">
-                            <a href="Options_Orders_History.html">
-                                <i class="icon-camera"></i>
-                                已成交订单
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="">
-                    <a href="javascript:;">
-                        <i class="icon-tag"></i>
-                        <span class="title">财务管理</span>
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li  class="">
-                            <a href="Options_Finance_Desposit.html">
-                                <i class="icon-tag"></i>
-                                保证金确认
-                            </a>
-                        </li>
-                        <li  class="">
-                            <a href="Options_Finance_Reports.html">
-                                <i class="icon-umbrella"></i>
-                                财务报表
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="">
-                    <a href="javascript:;">
-                        <i class="icon-bell"></i>
-                        <span class="title">风控管理</span>
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li  class="">
-                            <a href="Options_Risk_RiskManagement.html">
-                                <i class="icon-magnet"></i>
-                                风控数据
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="">
-                    <a href="javascript:;">
-                        <i class="icon-plane"></i>
-                        <span class="title">配置信息</span>
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li  class="">
-                            <a href="Options_Config_Quote.html">
-                                <i class="icon-folder"></i>
-                                报价信息
-                            </a>
-                        </li>
-                        <li  class="">
-                            <a href="Options_Config_Hedge.html">
-                                <i class="icon-film"></i>
-                                对冲配置
-                            </a>
-                        </li>
-                    </ul>
-                </li>
                 <li class="active open">
                     <a href="javascript:;">
                         <i class="icon-compass"></i>
@@ -224,30 +145,9 @@ License: You must have a valid license purchased only from themeforest(the above
                     </a>
                     <ul class="sub-menu">
                         <li  class="active open">
-                            <a href="Options_Function_Companys.html">
+                            <a href="/pages/Options_Function_Companys.html">
                                 <i class="icon-fire"></i>
                                 公司信息
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="">
-                    <a href="javascript:;">
-                        <i class="icon-settings"></i>
-                        <span class="title">系统管理</span>
-                        <span class="arrow"></span>
-                    </a>
-                    <ul class="sub-menu">
-                        <li  class="">
-                            <a href="Options_Setting_Users.html">
-                                <i class="icon-folder"></i>
-                                用户管理
-                            </a>
-                        </li>
-                        <li  class="">
-                            <a href="Options_Setting_Posts.html">
-                                <i class="icon-flag"></i>
-                                岗位管理
                             </a>
                         </li>
                     </ul>
@@ -275,26 +175,20 @@ License: You must have a valid license purchased only from themeforest(the above
                         <i class="fa fa-angle-right"></i>
                     </li>
                     <li>
-                        <a href="Options_Function_Companys.html">Function_Companys</a>
+                        <a href="/pages/Options_Function_Companys.html">Function_Companys</a>
                         <i class="fa fa-angle-right"></i>
                     </li>
                 </ul>
             </div>
 
             <!-- END PAGE HEADER-->
-            <div class="note note-success note-bordered">
-  				<p>
-  				<span class="label label-danger">NOTE:</span>文档地址:<a href="https://tower.im/projects/7f76e88ceb0c4514a9e9f7a4867a15e0/todos/1883c5f3618c4e55bb3c2782289b51ce/#548b9e32b85544818db9d1dde0c57219" target="_blank">点我查看</a>
-  				</p>
-  			</div>
             <div class="col-md-12">
-                <div style="position: absolute;width:1800px;margin-top:300px;">
+                <div style="position: absolute;width:98%;margin-top:20%;">
                     <div class="row form-group">
                       <div class="col-md-3 col-md-offset-3">
                           <input id="param" type="text" class="form-control  input-circle" aria-describedby="basic-addon1" placeholder="请输入公司名称或代码">
                       </div>
                         <div class="col-md-2">
-                            <button aria-hidden="true" data-dismiss="modal" data-toggle="modal" data-target="#Calculator" class="btn btn-circle green-haze">算报价</button>
                             <a onclick="searchCompanyInfo();" class="btn btn-circle blue" id="CompanysInfos">查信息</a>
                         </div>
                     </div>
@@ -303,82 +197,6 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
     </div>
     <!-- END CONTENT -->
-
-    <div class="modal fade" id="Calculator" data-backdrop="static" data-keyboard="false" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
-            <h4 class="modal-title">报价计算器</h4></div>
-          <div class="modal-body">
-              <table class="table table-striped table-bordered table-hover" id="sample_1">
-                    <tr>
-                        <th style="width: 100px;vertical-align:middle;">名称</th>
-                        <td colspan="2" style="width: 100px;vertical-align:middle;">贵州茅台 600519</td>
-                        <th style="width: 100px;vertical-align:middle;">价格(元)</th>
-                        <td style="width: 100px;vertical-align:middle;">
-                            <input type="number" class="form-control" placeholder="719.21">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>期限</th>
-                        <td>2周</td>
-                        <td>1个月</td>
-                        <td>3个月</td>
-                        <td>6个月</td>
-                    </tr>
-                    <tr>
-                        <th style="vertical-align:middle;">权利金比例(%)</th>
-                        <td>
-                            <input type="number" class="form-control" placeholder=""></td>
-                        <td>
-                            <input type="number" class="form-control" placeholder=""></td>
-                        <td>
-                            <input type="number" class="form-control" placeholder=""></td>
-                        <td>
-                            <input type="number" class="form-control" placeholder=""></td>
-                    </tr>
-                    <tr>
-                        <th class="tooltips" data-toggle="tooltip" data-placement="right" title="应交权利金=权利金比例*价格">
-                            应交权利金 <i class="fa fa-info-circle"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th class="tooltips" data-toggle="tooltip" data-placement="right" title="打和点价格=权利金比例*价格+价格">
-                            打和点价格 <i class="fa fa-info-circle"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th class="tooltips" data-toggle="tooltip" data-placement="right" title="距离涨幅=（打和点价格-价格）/价格">
-                            距离涨幅(%) <i class="fa fa-info-circle"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th>最近波幅(%)</th>
-                        <td>6.41</td>
-                        <td>8.56</td>
-                        <td>12.74</td>
-                        <td>16.54</td>
-                    </tr>
-
-              </table>
-          </div>
-          <div class="modal-footer">
-            <a target="_blank" href="pages/Options_Function_CompanysInfos.html" class="btn btn-primary id="CompanysInfos">公司信息</a>
-            <button aria-hidden="true" data-dismiss="modal" data-toggle="modal" class="btn">关闭</button>
-          </div>
-        </div>
-      </div>
-    </div>
 </div>
 <!-- END CONTAINER -->
 <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
@@ -426,14 +244,11 @@ Demo.init(); // init demo features
 
 function searchCompanyInfo(){
 	var param = jQuery("#param").val();
-
 	if(param!=null && param!=""){
-		window.open('pages/Options_Function_CompanysInfos.html?param='+param,'_blank');
-
+		window.open('/pages/Options_Function_CompanysInfos.html?param='+param,'_blank');
 	}else{
 		alert("公司名称不能为空！");
 	}
-	
 }
 </script>
 </body>
