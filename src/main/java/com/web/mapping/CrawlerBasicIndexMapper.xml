@@ -5,6 +5,7 @@
 		<id column="id" property="id"/>
 		<result column="shares_name" property="sharesName"/>
 		<result column="shares_code" property="sharesCode"/>
+		<result column="shares_type" property="sharesType"/>
 		<result column="latest_price" property="latestPrice"/>
 		<result column="rise_fall_ratio" property="riseFallRatio"/>
 		<result column="rise_fall_price" property="riseFallPirce"/>

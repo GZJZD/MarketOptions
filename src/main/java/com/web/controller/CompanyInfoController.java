@@ -1,5 +1,6 @@
 package com.web.controller;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,16 +77,67 @@ public class CompanyInfoController{
     @RequestMapping("getMainInflux.Action")
     @ResponseBody
     public List<CrawlerMainInflux> getMainInflux(String param) {
+    	 DecimalFormat df = new DecimalFormat("#0.00");
     	if(param!=null && !"".equals(param)) {
     		String code = null;
         	String name = null;
         	try {
         		Integer.parseInt(param);
     			code = param+"";
-    		} catch (Exception e) {
+    		} catch
+        	(Exception e) {
     			name = param;
     		}
+        	Double mainInfluxPrice = 0.0;Double mainInfluxPriceTotal = 0.0;
+        	Double hugeInfluxPrice = 0.0;Double hugeInfluxPriceTotal = 0.0;
+        	Double largeInfluxPrice = 0.0;Double largeInfluxPriceTotal = 0.0;
+        	Double middleInfluxPrice = 0.0;Double middleInfluxPriceTotal = 0.0;
+        	Double smallInfluxPrice = 0.0;Double smallInfluxPriceTotal = 0.0;
         	List<CrawlerMainInflux> crawlerMainInfluxList = crawlerMainInfluxService.selectMainInfluxByParam(code, name);
+        	for(int i=0; i<crawlerMainInfluxList.size(); i++) {
+        		if(i==30) {
+        			break;
+        		}
+        		//主力流入净值
+        		mainInfluxPrice=mainInfluxPrice+Double.parseDouble(crawlerMainInfluxList.get(i).getMainInfluxPrice());
+        		if(!crawlerMainInfluxList.get(i).getMainInfluxRatio().equals("-") && !crawlerMainInfluxList.get(i).getMainInfluxRatio().equals("0%")) {
+        			mainInfluxPriceTotal=mainInfluxPriceTotal+Double.parseDouble(crawlerMainInfluxList.get(i).getMainInfluxPrice())/Double.parseDouble(crawlerMainInfluxList.get(i).getMainInfluxRatio().substring(0,crawlerMainInfluxList.get(i).getMainInfluxRatio().length()-1))*100;
+        		}
+        		//超大单流入净值
+        		hugeInfluxPrice=hugeInfluxPrice+Double.parseDouble(crawlerMainInfluxList.get(i).getHugeInfluxPrice());
+        		if(!crawlerMainInfluxList.get(i).getHugeInfluxRatio().equals("-") && !crawlerMainInfluxList.get(i).getHugeInfluxRatio().equals("0%")) {
+        			hugeInfluxPriceTotal=hugeInfluxPriceTotal+Double.parseDouble(crawlerMainInfluxList.get(i).getHugeInfluxPrice())/Double.parseDouble(crawlerMainInfluxList.get(i).getHugeInfluxRatio().substring(0,crawlerMainInfluxList.get(i).getHugeInfluxRatio().length()-1))*100;
+        		}
+        		//大单流入净值
+        		largeInfluxPrice=largeInfluxPrice+Double.parseDouble(crawlerMainInfluxList.get(i).getLargeInfluxPrice());
+        		if(!crawlerMainInfluxList.get(i).getLargeInfluxRatio().equals("-") && !crawlerMainInfluxList.get(i).getLargeInfluxRatio().equals("0%")) {
+        			largeInfluxPriceTotal=largeInfluxPriceTotal+Double.parseDouble(crawlerMainInfluxList.get(i).getLargeInfluxPrice())/Double.parseDouble(crawlerMainInfluxList.get(i).getLargeInfluxRatio().substring(0,crawlerMainInfluxList.get(i).getLargeInfluxRatio().length()-1))*100;
+        		}
+        		//中单流入净值
+        		middleInfluxPrice=middleInfluxPrice+Double.parseDouble(crawlerMainInfluxList.get(i).getMiddleInfluxPrice());
+        		if(!crawlerMainInfluxList.get(i).getMiddleInfluxRatio().equals("-") && !crawlerMainInfluxList.get(i).getMiddleInfluxRatio().equals("0%")) {
+        			middleInfluxPriceTotal=middleInfluxPriceTotal+Double.parseDouble(crawlerMainInfluxList.get(i).getMiddleInfluxPrice())/Double.parseDouble(crawlerMainInfluxList.get(i).getMiddleInfluxRatio().substring(0,crawlerMainInfluxList.get(i).getMiddleInfluxRatio().length()-1))*100;
+        		}
+        		//小单流入净值
+        		smallInfluxPrice=smallInfluxPrice+Double.parseDouble(crawlerMainInfluxList.get(i).getSmallInfluxPrice());
+        		if(!crawlerMainInfluxList.get(i).getSmallInfluxRatio().equals("-") && !crawlerMainInfluxList.get(i).getSmallInfluxRatio().equals("0%")) {
+        			smallInfluxPriceTotal=smallInfluxPriceTotal+Double.parseDouble(crawlerMainInfluxList.get(i).getSmallInfluxPrice())/Double.parseDouble(crawlerMainInfluxList.get(i).getSmallInfluxRatio().substring(0,crawlerMainInfluxList.get(i).getSmallInfluxRatio().length()-1))*100;
+        		}
+        	}
+        	CrawlerMainInflux crawlerMainInflux = new CrawlerMainInflux();
+        	crawlerMainInflux.setDate("合计");
+        	crawlerMainInflux.setMainInfluxPrice(df.format(mainInfluxPrice));
+        	crawlerMainInflux.setMainInfluxRatio(df.format(mainInfluxPrice/mainInfluxPriceTotal*100)+"%");
+        	crawlerMainInflux.setHugeInfluxPrice(df.format(hugeInfluxPrice));
+        	crawlerMainInflux.setHugeInfluxRatio(df.format(hugeInfluxPrice/hugeInfluxPriceTotal*100)+"%");
+        	crawlerMainInflux.setLargeInfluxPrice(df.format(largeInfluxPrice));
+        	crawlerMainInflux.setLargeInfluxRatio(df.format(largeInfluxPrice/largeInfluxPriceTotal*100)+"%");
+        	crawlerMainInflux.setMiddleInfluxPrice(df.format(middleInfluxPrice));
+        	crawlerMainInflux.setMiddleInfluxRatio(df.format(middleInfluxPrice/middleInfluxPriceTotal*100)+"%");
+        	crawlerMainInflux.setSmallInfluxPrice(df.format(smallInfluxPrice));
+        	crawlerMainInflux.setSmallInfluxRatio(df.format(smallInfluxPrice/smallInfluxPriceTotal*100)+"%");
+        	crawlerMainInfluxList.add(0, crawlerMainInflux);
+        	crawlerMainInfluxList = crawlerMainInfluxList.subList(0, 30);
         	return crawlerMainInfluxList;
     	}
     	return null;

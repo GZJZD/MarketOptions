@@ -11,6 +11,8 @@ public class CrawlerBasicIndex {
 	private String sharesName;
 	//股票代码
 	private String sharesCode;
+	//股票类型
+	private String sharesType;
 	//最新价
 	private String latestPrice;
 	//涨跌幅
@@ -57,6 +59,12 @@ public class CrawlerBasicIndex {
 	}
 	public void setSharesCode(String sharesCode) {
 		this.sharesCode = sharesCode;
+	}
+	public String getSharesType() {
+		return sharesType;
+	}
+	public void setSharesType(String sharesType) {
+		this.sharesType = sharesType;
 	}
 	public String getLatestPrice() {
 		return latestPrice;

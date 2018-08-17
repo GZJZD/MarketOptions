@@ -115,47 +115,46 @@ function searchMainInflux(param){
 function setMainInflux(data){
 	var content="";
 	$.each(data, function (index, ele) {
+		if(index==1){
 		content+="<tr>";
 		content+="<td>"+ele.date+"</td>";
 		if(ele.mainInfluxPrice>=0){
 			content+="<td style='color: red'>"+ele.mainInfluxPrice+"</td>";
-			content+="<td style='color: red'>"+ele.mainInfluxRatio+"%</td>";
+			content+="<td style='color: red'>"+ele.mainInfluxRatio+"</td>";
 		}else{
 			content+="<td style='color: green'>"+ele.mainInfluxPrice+"</td>";
-			content+="<td style='color: green'>"+ele.mainInfluxRatio+"%</td>";
+			content+="<td style='color: green'>"+ele.mainInfluxRatio+"</td>";
 		}
 		if(ele.hugeInfluxPrice>=0){
 			content+="<td style='color: red'>"+ele.hugeInfluxPrice+"</td>";
-			content+="<td style='color: red'>"+ele.hugeInfluxRatio+"%</td>";
+			content+="<td style='color: red'>"+ele.hugeInfluxRatio+"</td>";
 		}else{
 			content+="<td style='color: green'>"+ele.hugeInfluxPrice+"</td>";
-			content+="<td style='color: green'>"+ele.hugeInfluxRatio+"%</td>";
+			content+="<td style='color: green'>"+ele.hugeInfluxRatio+"</td>";
 		}
 		if(ele.largeInfluxPrice>=0){
 			content+="<td style='color: red'>"+ele.largeInfluxPrice+"</td>";
-			content+="<td style='color: red'>"+ele.largeInfluxRatio+"%</td>";
+			content+="<td style='color: red'>"+ele.largeInfluxRatio+"</td>";
 		}else{
 			content+="<td style='color: green'>"+ele.largeInfluxPrice+"</td>";
-			content+="<td style='color: green'>"+ele.largeInfluxRatio+"%</td>";
+			content+="<td style='color: green'>"+ele.largeInfluxRatio+"</td>";
 		}
 		if(ele.middleInfluxPrice>=0){
 			content+="<td style='color: red'>"+ele.middleInfluxPrice+"</td>";
-			content+="<td style='color: red'>"+ele.middleInfluxRatio+"%</td>";
+			content+="<td style='color: red'>"+ele.middleInfluxRatio+"</td>";
 		}else{
 			content+="<td style='color: green'>"+ele.middleInfluxPrice+"</td>";
-			content+="<td style='color: green'>"+ele.middleInfluxRatio+"%</td>";
+			content+="<td style='color: green'>"+ele.middleInfluxRatio+"</td>";
 		}
 		
 		if(ele.smallInfluxPrice>=0){
 			content+="<td style='color: red'>"+ele.smallInfluxPrice+"</td>";
-			content+="<td style='color: red'>"+ele.smallInfluxRatio+"%</td>";
+			content+="<td style='color: red'>"+ele.smallInfluxRatio+"</td>";
 		}else{
 			content+="<td style='color: green'>"+ele.smallInfluxPrice+"</td>";
-			content+="<td style='color: green'>"+ele.smallInfluxRatio+"%</td>";
+			content+="<td style='color: green'>"+ele.smallInfluxRatio+"</td>";
 		}
 		content+="</tr>";
-		if(index==0){
-			return false;
 		}
     });
 	$("#mainInflux").after(content);
@@ -174,10 +173,7 @@ function moreMainInflux(){
 				valign:"middle",
 				align:"center",
 				colspan: 1,
-				rowspan: 2,
-				footerFormatter: function (value) {
-					return "合计";
-			    }
+				rowspan: 2
 			},
 			{
 				title: "主力净流入",
@@ -220,14 +216,7 @@ function moreMainInflux(){
 				field: 'mainInfluxPrice',
 				title: '净额(万元)',
 				valign:"middle",
-				align:"center",
-				footerFormatter: function (value) {
-			        var count = 0;
-			        for (var i in value) {
-			            count += parseFloat(value[i].mainInfluxPrice);
-			        }
-			        return count;
-			    }
+				align:"center"
 			},
 			{
 				field: 'mainInfluxRatio',
@@ -289,7 +278,6 @@ function moreMainInflux(){
 		dataType: "json",
 		method: 'get',
 		cache: false,
-		showFooter: true,
 		pagination: true, 
 		sortable: false,      //是否启用排序  
 	    sortOrder: "asc",     //排序方式  
@@ -326,23 +314,15 @@ function setFinancialDisclosure(data){
 	$.each(data, function (index, ele) {
 		content+="<tr>";
 		content+="<td>"+ele.performanceChange+"</td>";
-		if(ele.expectedNetProfitLeft==ele.expectedNetProfitRight){
-			content+="<td>"+ele.expectedNetProfitLeft+"</td>";
+		if(ele.expectedNetProfitLeft.length>1 && ele.expectedNetProfitLeft.indexOf("-")>-1){
+			content+="<td style='color:green'>"+ele.expectedNetProfitLeft+"</td>";
 		}else{
-			content+="<td>"+ele.expectedNetProfitLeft+"~"+ele.expectedNetProfitRight+"</td>";	
+			content+="<td style='color:red'>"+ele.expectedNetProfitLeft+"</td>";
 		}
-		if(ele.performanceChangeRatioLeft==ele.performanceChangeRatioRight){
-			if(ele.performanceChangeRatioLeft>=0){
-				content+="<td style='color:red'>"+ele.performanceChangeRatioLeft+"%</td>";
-			}else{
-				content+="<td style='color:green'>"+ele.performanceChangeRatioLeft+"%</td>";
-			}
+		if(ele.performanceChangeRatioLeft.length>1 && ele.performanceChangeRatioLeft.indexOf("-")>-1){
+			content+="<td style='color:green'>"+ele.performanceChangeRatioLeft+"</td>";
 		}else{
-			if(ele.performanceChangeRatioRight>=0){
-				content+="<td style='color:red'>"+ele.performanceChangeRatioLeft+"%~"+ele.performanceChangeRatioRight+"%</td>";	
-			}else{
-				content+="<td style='color:green'>"+ele.performanceChangeRatioLeft+"%~"+ele.performanceChangeRatioRight+"%</td>";	
-			}
+			content+="<td style='color:red'>"+ele.performanceChangeRatioLeft+"</td>";
 		}
 		content+="<td>"+ele.performanceChangeReason+"</td>";
 		content+="<td>"+ele.previewType+"</td>";
@@ -372,27 +352,13 @@ function moreFinancialDisclosure(){
 			field: 'expectedNetProfitLeft',
 			title: '预计净利润(元)',
 			valign:"middle",
-			align:"center",
-			formatter: function (value, row, index) {
-                if(row.expectedNetProfitRight==value){
-                    return value;
-                }else {
-                    return value+"~"+row.expectedNetProfitRight;
-                }
-            }	
+			align:"center"	
 		},
 		{
 			field: 'performanceChangeRatioLeft',
 			title: '业绩变动幅度',
 			valign:"middle",
-			align:"center",
-			formatter: function (value, row, index) {
-                if(row.performanceChangeRatioRight==value){
-                    return value+"%";
-                }else {
-                    return value+"%~"+row.performanceChangeRatioRight+"%";
-                }
-            }	
+			align:"center"	
 		},
 		{
 			field: 'performanceChangeReason',
@@ -628,37 +594,67 @@ function setShareBuyback(data){
 	var content="";
 	$.each(data, function (index, ele) {
 		content+="<tr>";
-		if(ele.buybackPriceRangeLeft==ele.buybackPriceRangeRight){
-			content+="<td>"+ele.buybackPriceRangeLeft+"</td>";
-		}else{
-			content+="<td>"+ele.buybackPriceRangeLeft+"~"+ele.buybackPriceRangeRight+"</td>";
+		content+="<td>";
+		if(ele.buybackPriceRangeLeft!=null){
+			content+=ele.buybackPriceRangeLeft;
 		}
+		if(ele.buybackPriceRangeLeft!=null&&ele.buybackPriceRangeRight!=null&&ele.buybackPriceRangeLeft!=ele.buybackPriceRangeRight){
+			content+="~";
+		}
+		if(ele.buybackPriceRangeRight!=null&&ele.buybackPriceRangeLeft!=ele.buybackPriceRangeRight){
+			content+=ele.buybackPriceRangeRight;
+		}
+		content+="</td>";
 		content+="<td>"+ele.closePrice+"</td>";
-		if(ele.buybackVolumnRangeLeft==ele.buybackVolumnRangeRight){
-			content+="<td>"+ele.buybackVolumnRangeLeft+"</td>";
-		}else{
-			content+="<td>"+ele.buybackVolumnRangeLeft+"~"+ele.buybackVolumnRangeRight+"</td>";
+		content+="<td>";
+		if(ele.buybackVolumnRangeLeft!=null){
+			content+=ele.buybackVolumnRangeLeft;
 		}
-		if(ele.shareRatioLeft==ele.shareRatioRight){
-			content+="<td>"+ele.shareRatioLeft+"</td>";
-		}else{
-			content+="<td>"+ele.shareRatioLeft+"~"+ele.shareRatioRight+"</td>";
+		if(ele.buybackVolumnRangeLeft!=null&&ele.buybackVolumnRangeRight!=null&&ele.buybackVolumnRangeLeft!=ele.buybackVolumnRangeRight){
+			content+="~";
 		}
-		if(ele.equityRatioLeft==ele.equityRatioRight){
-			content+="<td>"+ele.equityRatioLeft+"</td>";
-		}else{
-			content+="<td>"+ele.equityRatioLeft+"~"+ele.equityRatioRight+"</td>";
+		if(ele.buybackVolumnRangeRight!=null&&ele.buybackVolumnRangeLeft!=ele.buybackVolumnRangeRight){
+			content+=ele.buybackVolumnRangeRight;
 		}
-		if(ele.buybackAmountRangeLeft==ele.buybackAmountRangeRight){
-			content+="<td>"+ele.buybackAmountRangeLeft+"</td>";
-		}else{
-			content+="<td>"+ele.buybackAmountRangeLeft+"~"+ele.buybackAmountRangeRight+"</td>";
+		content+="</td>";
+		content+="<td>";
+		if(ele.shareRatioLeft!=null){
+			content+=ele.shareRatioLeft;
 		}
+		if(ele.shareRatioLeft!=null&&ele.shareRatioRight!=null&&ele.shareRatioLeft!=ele.shareRatioRight){
+			content+="~";
+		}
+		if(ele.shareRatioRight!=null&&ele.shareRatioLeft!=ele.shareRatioRight){
+			content+=ele.shareRatioRight;
+		}
+		content+="</td>";
+		content+="<td>";
+		if(ele.equityRatioLeft!=null){
+			content+=ele.equityRatioLeft;
+		}
+		if(ele.equityRatioLeft!=null&&ele.equityRatioRight!=null&&ele.equityRatioLeft!=ele.equityRatioRight){
+			content+="~";
+		}
+		if(ele.equityRatioRight!=null&&ele.equityRatioRight!=ele.equityRatioLeft){
+			content+=ele.equityRatioRight;
+		}
+		content+="</td>";
+		content+="<td>";
+		if(ele.buybackAmountRangeLeft!=null){
+			content+=ele.buybackAmountRangeLeft;
+		}
+		if(ele.buybackAmountRangeLeft!=null&&ele.buybackAmountRangeRight!=null&&ele.buybackAmountRangeLeft!=ele.buybackAmountRangeRight){
+			content+="~";
+		}
+		if(ele.buybackAmountRangeRight!=null && ele.buybackAmountRangeRight!=ele.buybackAmountRangeLeft){
+			content+=ele.buybackAmountRangeRight;
+		}
+		content+="</td>";
 		content+="<td>"+ele.beginDate+"</td>";
 		content+="<td>"+ele.implProgress+"</td>";
 		content+="<td>"+ele.announcementDate+"</td>";
 		content+="</tr>";
-		if(index==2){
+		if(index==0){
 			return false;
 		}
     });
@@ -678,11 +674,17 @@ function moreShareBuyback(){
 				valign:"middle",
 				align:"center",
 				formatter: function (value, row, index) {
-	                if(row.buybackPriceRangeRight==value){
-	                    return value;
-	                }else {
-	                    return value+"~"+row.buybackPriceRangeRight;
-	                }
+					var content="";
+	                if(value!=null){
+	                	content += value;
+	        		}
+	        		if(value!=null&&row.buybackPriceRangeRight!=null&&value!=row.buybackPriceRangeRight){
+	        			content+="~";
+	        		}
+	        		if(row.buybackPriceRangeRight!=null&&value!=row.buybackPriceRangeRight){
+	        			content+=row.buybackPriceRangeRight;
+	        		}
+	        		return content;
 	            }
 			},
 			{
@@ -697,11 +699,17 @@ function moreShareBuyback(){
 				valign:"middle",
 				align:"center",
 				formatter: function (value, row, index) {
-	                if(row.buybackVolumnRangeRight==value){
-	                    return value;
-	                }else {
-	                    return value+"~"+row.buybackVolumnRangeRight;
-	                }
+	                var content="";
+	                if(value!=null){
+	                	content += value;
+	        		}
+	        		if(value!=null&&row.buybackVolumnRangeRight!=null&&value!=row.buybackVolumnRangeRight){
+	        			content+="~";
+	        		}
+	        		if(row.buybackVolumnRangeRight!=null&&value!=row.buybackVolumnRangeRight){
+	        			content+=row.buybackVolumnRangeRight;
+	        		}
+	        		return content;
 	            }
 			},
 			{
@@ -710,11 +718,17 @@ function moreShareBuyback(){
 				valign:"middle",
 				align:"center",
 				formatter: function (value, row, index) {
-	                if(row.shareRatioRight==value){
-	                    return value;
-	                }else {
-	                    return value+"~"+row.shareRatioRight;
-	                }
+					var content="";
+	                if(value!=null){
+	                	content += value;
+	        		}
+	        		if(value!=null&&row.shareRatioRight!=null&&value!=row.shareRatioRight){
+	        			content+="~";
+	        		}
+	        		if(row.shareRatioRight!=null&&value!=row.shareRatioRight){
+	        			content+=row.shareRatioRight;
+	        		}
+	        		return content;
 	            }
 			},
 			{
@@ -723,11 +737,17 @@ function moreShareBuyback(){
 				valign:"middle",
 				align:"center",
 				formatter: function (value, row, index) {
-	                if(row.equityRatioRight==value){
-	                    return value;
-	                }else {
-	                    return value+"~"+row.equityRatioRight;
-	                }
+	                var content="";
+	                if(value!=null){
+	                	content += value;
+	        		}
+	        		if(value!=null&&row.equityRatioRight!=null&&value!=row.equityRatioRight){
+	        			content+="~";
+	        		}
+	        		if(row.equityRatioRight!=null&&value!=row.equityRatioRight){
+	        			content+=row.equityRatioRight;
+	        		}
+	        		return content;
 	            }
 			},
 			{
@@ -736,11 +756,17 @@ function moreShareBuyback(){
 				valign:"middle",
 				align:"center",
 				formatter: function (value, row, index) {
-	                if(row.buybackAmountRangeRight==value){
-	                    return value;
-	                }else {
-	                    return value+"~"+row.buybackAmountRangeRight;
-	                }
+	                var content="";
+	                if(value!=null){
+	                	content += value;
+	        		}
+	        		if(value!=null&&row.buybackAmountRangeRight!=null&&value!=row.buybackAmountRangeRight){
+	        			content+="~";
+	        		}
+	        		if(row.buybackAmountRangeRight!=null&&value!=row.buybackAmountRangeRight){
+	        			content+=row.buybackAmountRangeRight;
+	        		}
+	        		return content;
 	            }
 			},
 			{
