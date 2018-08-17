@@ -19,6 +19,8 @@ public class CrawlerCompanyAnnouncement {
 	private String announceType;
 	//公告日期
 	private String announceDate;
+	//
+	private Long announceId;
 	
 	public Long getId() {
 		return id;
@@ -61,6 +63,12 @@ public class CrawlerCompanyAnnouncement {
 	}
 	public void setAnnounceDate(String announceDate) {
 		this.announceDate = announceDate;
+	}
+	public Long getAnnounceId() {
+		return announceId;
+	}
+	public void setAnnounceId(Long announceId) {
+		this.announceId = announceId;
 	}
 	
 }

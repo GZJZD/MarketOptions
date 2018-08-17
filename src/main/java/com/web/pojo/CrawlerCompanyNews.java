@@ -15,6 +15,7 @@ public class CrawlerCompanyNews {
 	private String newsTitle;
 	//新闻地址
 	private String newsUrl;
+	private Long newsId;
 	//日期
 	private String date;
 	
@@ -47,6 +48,12 @@ public class CrawlerCompanyNews {
 	}
 	public void setNewsUrl(String newsUrl) {
 		this.newsUrl = newsUrl;
+	}
+	public Long getNewsId() {
+		return newsId;
+	}
+	public void setNewsId(Long newsId) {
+		this.newsId = newsId;
 	}
 	public String getDate() {
 		return date;

@@ -7,6 +7,7 @@
 		<result column="shares_code" property="sharesCode"/>
 		<result column="news_title" property="newsTitle"/>
 		<result column="news_url" property="newsUrl"/>
+		<result column="news_id" property="newsId"/>
 		<result column="date" property="date"/>
 	</resultMap>
 	<select id="selectCompanyNewsByParam" resultMap="BaseResultMap">

@@ -9,6 +9,7 @@
 		<result column="announce_url" property="announceUrl"/>
 		<result column="announce_type" property="announceType"/>
 		<result column="announce_date" property="announceDate"/>
+		<result column="announce_id" property="announceId"/>
 	</resultMap>
 	<select id="selectCompanyAnnounceByParam" resultMap="BaseResultMap">
 		select * from crawler_company_announcement
