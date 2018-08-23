@@ -119,39 +119,39 @@ function setMainInflux(data){
 		content+="<tr>";
 		content+="<td>"+ele.date+"</td>";
 		if(ele.mainInfluxPrice>=0){
-			content+="<td style='color: red'>"+ele.mainInfluxPrice+"</td>";
+			content+="<td style='color: red'>"+Number(ele.mainInfluxPrice).toFixed(2)+"</td>";
 			content+="<td style='color: red'>"+ele.mainInfluxRatio+"</td>";
 		}else{
-			content+="<td style='color: green'>"+ele.mainInfluxPrice+"</td>";
+			content+="<td style='color: green'>"+Number(ele.mainInfluxPrice).toFixed(2)+"</td>";
 			content+="<td style='color: green'>"+ele.mainInfluxRatio+"</td>";
 		}
 		if(ele.hugeInfluxPrice>=0){
-			content+="<td style='color: red'>"+ele.hugeInfluxPrice+"</td>";
+			content+="<td style='color: red'>"+Number(ele.hugeInfluxPrice).toFixed(2)+"</td>";
 			content+="<td style='color: red'>"+ele.hugeInfluxRatio+"</td>";
 		}else{
-			content+="<td style='color: green'>"+ele.hugeInfluxPrice+"</td>";
+			content+="<td style='color: green'>"+Number(ele.hugeInfluxPrice).toFixed(2)+"</td>";
 			content+="<td style='color: green'>"+ele.hugeInfluxRatio+"</td>";
 		}
 		if(ele.largeInfluxPrice>=0){
-			content+="<td style='color: red'>"+ele.largeInfluxPrice+"</td>";
+			content+="<td style='color: red'>"+Number(ele.largeInfluxPrice).toFixed(2)+"</td>";
 			content+="<td style='color: red'>"+ele.largeInfluxRatio+"</td>";
 		}else{
-			content+="<td style='color: green'>"+ele.largeInfluxPrice+"</td>";
+			content+="<td style='color: green'>"+Number(ele.largeInfluxPrice).toFixed(2)+"</td>";
 			content+="<td style='color: green'>"+ele.largeInfluxRatio+"</td>";
 		}
 		if(ele.middleInfluxPrice>=0){
-			content+="<td style='color: red'>"+ele.middleInfluxPrice+"</td>";
+			content+="<td style='color: red'>"+Number(ele.middleInfluxPrice).toFixed(2)+"</td>";
 			content+="<td style='color: red'>"+ele.middleInfluxRatio+"</td>";
 		}else{
-			content+="<td style='color: green'>"+ele.middleInfluxPrice+"</td>";
+			content+="<td style='color: green'>"+Number(ele.middleInfluxPrice).toFixed(2)+"</td>";
 			content+="<td style='color: green'>"+ele.middleInfluxRatio+"</td>";
 		}
 		
 		if(ele.smallInfluxPrice>=0){
-			content+="<td style='color: red'>"+ele.smallInfluxPrice+"</td>";
+			content+="<td style='color: red'>"+Number(ele.smallInfluxPrice).toFixed(2)+"</td>";
 			content+="<td style='color: red'>"+ele.smallInfluxRatio+"</td>";
 		}else{
-			content+="<td style='color: green'>"+ele.smallInfluxPrice+"</td>";
+			content+="<td style='color: green'>"+Number(ele.smallInfluxPrice).toFixed(2)+"</td>";
 			content+="<td style='color: green'>"+ele.smallInfluxRatio+"</td>";
 		}
 		content+="</tr>";
@@ -216,29 +216,40 @@ function moreMainInflux(){
 				field: 'mainInfluxPrice',
 				title: '净额(万元)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'mainInfluxRatio',
 				title: '净占比',
 				valign:"middle",
 				align:"center"
-			},{
+			},
+			{
 				field: 'hugeInfluxPrice',
 				title: '净额(万元)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'hugeInfluxRatio',
 				title: '净占比',
 				valign:"middle",
 				align:"center"
-			},{
+			},
+			{
 				field: 'largeInfluxPrice',
 				title: '净额(万元)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'largeInfluxRatio',
@@ -250,7 +261,10 @@ function moreMainInflux(){
 				field: 'middleInfluxPrice',
 				title: '净额(万元)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'middleInfluxRatio',
@@ -262,7 +276,10 @@ function moreMainInflux(){
 				field: 'smallInfluxPrice',
 				title: '净额(万元)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'smallInfluxRatio',
@@ -432,13 +449,13 @@ function setShareholders(data){
 		}else{
 			content+="<td style='color:green'>"+ele.changeType+"</td>";
 		}
-		content+="<td>"+ele.changeShare+"</td>";
-		content+="<td>"+ele.changeEquityRatio+"</td>";
-		content+="<td>"+ele.changeShareRatio+"</td>";
-		content+="<td>"+ele.totalHold+"</td>";
-		content+="<td>"+ele.totalEquityRatio+"</td>";
-		content+="<td>"+ele.totalShare+"</td>";
-		content+="<td>"+ele.totalShareRatio+"</td>";
+		content+="<td>"+Number(ele.changeShare).toFixed(2)+"</td>";
+		content+="<td>"+Number(ele.changeEquityRatio).toFixed(2)+"</td>";
+		content+="<td>"+Number(ele.changeShareRatio).toFixed(2)+"</td>";
+		content+="<td>"+Number(ele.totalHold).toFixed(2)+"</td>";
+		content+="<td>"+Number(ele.totalEquityRatio).toFixed(2)+"</td>";
+		content+="<td>"+Number(ele.totalShare).toFixed(2)+"</td>";
+		content+="<td>"+Number(ele.totalShareRatio).toFixed(2)+"</td>";
 		content+="<td>"+ele.beginDate+"</td>";
 		content+="<td>"+ele.endDate+"</td>";
 		content+="<td>"+ele.announcementDate+"</td>";
@@ -515,41 +532,64 @@ function moreShareholders(){
 				field: 'changeShare',
 				title: '变动数量(万股)',
 				valign:"middle",
-				align:"center"
-			},{
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
+			},
+			{
 				field: 'changeEquityRatio',
 				title: '占总股本比例(%)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'changeShareRatio',
 				title: '占流通股比例(%)',
 				valign:"middle",
-				align:"center"
-			},{
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
+			},
+			{
 				field: 'totalHold',
 				title: '持股总数(万股)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'totalEquityRatio',
 				title: '占总股本比例(%)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'totalShare',
 				title: '持流通股数(万股)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'totalShareRatio',
 				title: '占流通股比例(%)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			}
 		]
 	];
@@ -619,24 +659,24 @@ function setShareBuyback(data){
 		content+="</td>";
 		content+="<td>";
 		if(ele.shareRatioLeft!=null){
-			content+=ele.shareRatioLeft;
+			content+=Number(ele.shareRatioLeft).toFixed(2);
 		}
 		if(ele.shareRatioLeft!=null&&ele.shareRatioRight!=null&&ele.shareRatioLeft!=ele.shareRatioRight){
 			content+="~";
 		}
 		if(ele.shareRatioRight!=null&&ele.shareRatioLeft!=ele.shareRatioRight){
-			content+=ele.shareRatioRight;
+			content+=Number(ele.shareRatioRight).toFixed(2);
 		}
 		content+="</td>";
 		content+="<td>";
 		if(ele.equityRatioLeft!=null){
-			content+=ele.equityRatioLeft;
+			content+=Number(ele.equityRatioLeft).toFixed(2);
 		}
 		if(ele.equityRatioLeft!=null&&ele.equityRatioRight!=null&&ele.equityRatioLeft!=ele.equityRatioRight){
 			content+="~";
 		}
 		if(ele.equityRatioRight!=null&&ele.equityRatioRight!=ele.equityRatioLeft){
-			content+=ele.equityRatioRight;
+			content+=Number(ele.equityRatioRight).toFixed(2);
 		}
 		content+="</td>";
 		content+="<td>";
@@ -720,13 +760,13 @@ function moreShareBuyback(){
 				formatter: function (value, row, index) {
 					var content="";
 	                if(value!=null){
-	                	content += value;
+	                	content += Number(value).toFixed(2);
 	        		}
 	        		if(value!=null&&row.shareRatioRight!=null&&value!=row.shareRatioRight){
 	        			content+="~";
 	        		}
 	        		if(row.shareRatioRight!=null&&value!=row.shareRatioRight){
-	        			content+=row.shareRatioRight;
+	        			content+=Number(row.shareRatioRight).toFixed(2);
 	        		}
 	        		return content;
 	            }
@@ -739,13 +779,13 @@ function moreShareBuyback(){
 				formatter: function (value, row, index) {
 	                var content="";
 	                if(value!=null){
-	                	content += value;
+	                	content += Number(value).toFixed(2);
 	        		}
 	        		if(value!=null&&row.equityRatioRight!=null&&value!=row.equityRatioRight){
 	        			content+="~";
 	        		}
 	        		if(row.equityRatioRight!=null&&value!=row.equityRatioRight){
-	        			content+=row.equityRatioRight;
+	        			content+=Number(row.equityRatioRight).toFixed(2);
 	        		}
 	        		return content;
 	            }
@@ -834,19 +874,19 @@ function setSharePledge(data){
 		content+="<tr>";
 		content+="<td>"+ele.shareholdersName+"</td>";
 		content+="<td>"+ele.pledgeNumber+"</td>";
-		content+="<td>"+ele.pledgeVolumn+"</td>";
-		content+="<td>"+ele.pledgePrice+"</td>";
-		content+="<td>"+ele.shareRatio+"</td>";
-		content+="<td>"+ele.equityDatio+"</td>";
+		content+="<td>"+Number(ele.pledgeVolumn).toFixed(2)+"</td>";
+		content+="<td>"+Number(ele.pledgePrice).toFixed(2)+"</td>";
+		content+="<td>"+Number(ele.shareRatio).toFixed(2)+"</td>";
+		content+="<td>"+Number(ele.equityDatio).toFixed(2)+"</td>";
 		if(ele.closePositionRangeLeft==ele.closePositionRangeRight){
-			content+="<td>"+ele.closePositionRangeLeft+"</td>";
+			content+="<td>"+Number(ele.closePositionRangeLeft).toFixed(2)+"</td>";
 		}else{
-			content+="<td>"+ele.closePositionRangeLeft+"~"+ele.closePositionRangeRight+"</td>";
+			content+="<td>"+Number(ele.closePositionRangeLeft).toFixed(2)+"~"+Number(ele.closePositionRangeRight).toFixed(2)+"</td>";
 		}
 		if(ele.warningPositionRangeLeft==ele.warningPositionRangeRight){
-			content+="<td>"+ele.warningPositionRangeLeft+"</td>";
+			content+="<td>"+Number(ele.warningPositionRangeLeft).toFixed(2)+"</td>";
 		}else{
-			content+="<td>"+ele.warningPositionRangeLeft+"~"+ele.warningPositionRangeRight+"</td>";
+			content+="<td>"+Number(ele.warningPositionRangeLeft).toFixed(2)+"~"+Number(ele.warningPositionRangeRight).toFixed(2)+"</td>";
 		}
 		content+="<td>"+ele.updateDate+"</td>";
 		content+="</tr>";
@@ -875,28 +915,42 @@ function moreSharePledge(){
 				title: '最新质押笔数',
 				valign:"middle",
 				align:"center"
-			},{
+			},
+			{
 				field: 'pledgeVolumn',
 				title: '剩余质押股数(股)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'pledgePrice',
 				title: '剩余质押股份市值(元)',
 				valign:"middle",
-				align:"center"
-			},{
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
+			},
+			{
 				field: 'shareRatio',
 				title: '占所持股份比例(%)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'equityDatio',
 				title: '占总股本比例(%)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'closePositionRangeLeft',
@@ -905,9 +959,9 @@ function moreSharePledge(){
 				align:"center",
 				formatter: function (value, row, index) {
 	                if(row.closePositionRangeRight==value){
-	                    return value;
+	                    return Number(value).toFixed(2);
 	                }else {
-	                    return value+"~"+row.closePositionRangeRight;
+	                    return Number(value).toFixed(2)+"~"+row.closePositionRangeRight;
 	                }
 	            }
 			},
@@ -918,9 +972,9 @@ function moreSharePledge(){
 				align:"center",
 				formatter: function (value, row, index) {
 	                if(row.warningPositionRangeRight==value){
-	                    return value;
+	                    return Number(value).toFixed(2);
 	                }else {
-	                    return value+"~"+row.warningPositionRangeRight;
+	                    return Number(value).toFixed(2)+"~"+Number(row.warningPositionRangeRight).toFixed(2);
 	                }
 	            }
 			},
@@ -975,23 +1029,27 @@ function setRestrictedCirculation(data){
 		content+="<tr>";
 		content+="<td>"+ele.circulationDate+"</td>";
 		content+="<td>"+ele.shareholdersNum+"</td>";
-		content+="<td>"+ele.shareNum+"</td>";
-		content+="<td>"+ele.realShareNum+"</td>";
-		content+="<td>"+ele.nonShareNum+"</td>";
-		content+="<td>"+ele.realSharePrice+"</td>";
-		content+="<td>"+ele.equityRatio+"</td>";
-		content+="<td>"+ele.shareRatio+"</td>";
-		content+="<td>"+ele.closePrice+"</td>";
+		content+="<td>"+Number(ele.shareNum).toFixed(2)+"</td>";
+		content+="<td>"+Number(ele.realShareNum).toFixed(2)+"</td>";
+		content+="<td>"+Number(ele.nonShareNum).toFixed(2)+"</td>";
+		content+="<td>"+Number(ele.realSharePrice).toFixed(2)+"</td>";
+		content+="<td>"+Number(ele.equityRatio).toFixed(2)+"</td>";
+		content+="<td>"+Number(ele.shareRatio).toFixed(2)+"</td>";
+		content+="<td>"+Number(ele.closePrice).toFixed(2)+"</td>";
 		content+="<td>"+ele.shareType+"</td>";
-		if(ele.beforeRange>=0){
-			content+="<td style='color:red'>"+ele.beforeRange+"</td>";
+		if(ele.beforeRange=="-"){
+			content+="<td>-</td>";
+		}else if(ele.beforeRange>=0){
+			content+="<td style='color:red'>"+Number(ele.beforeRange).toFixed(2)+"</td>";
 		}else{
-			content+="<td style='color:green'>"+ele.beforeRange+"</td>";
+			content+="<td style='color:green'>"+Number(ele.beforeRange).toFixed(2)+"</td>";
 		}
-		if(ele.afterRange>=0){
-			content+="<td style='color:red'>"+ele.afterRange+"</td>";
+		if(ele.afterRange=="-"){
+			content+="<td>-</td>";
+		}else if(ele.afterRange>=0){
+			content+="<td style='color:red'>"+Number(ele.afterRange).toFixed(2)+"</td>";
 		}else{
-			content+="<td style='color:green'>"+ele.afterRange+"</td>";
+			content+="<td style='color:green'>"+Number(ele.afterRange).toFixed(2)+"</td>";
 		}
 		content+="</tr>";
 		if(index==2){
@@ -1023,42 +1081,64 @@ function moreRestrictedCirculation(){
 				field: 'shareNum',
 				title: '解禁数量(股)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'realShareNum',
 				title: '实际解禁数量(股)',
 				valign:"middle",
-				align:"center"
-			},{
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
+			},
+			{
 				field: 'nonShareNum',
 				title: '未解禁数量(股)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'realSharePrice',
 				title: '实际解禁市值(元)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'equityRatio',
 				title: '占总市值比例(%)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'shareRatio',
 				title: '占流通市值比例(%)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'closePrice',
 				title: '解禁前一日收盘价(元)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'shareType',
@@ -1070,13 +1150,25 @@ function moreRestrictedCirculation(){
 				field: 'beforeRange',
 				title: '解禁前20日涨跌幅(%)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					if(value==null || value=="-"){
+						return value;
+					}
+					return Number(value).toFixed(2);
+				}
 			},
 			{
 				field: 'afterRange',
 				title: '解禁后20日涨跌幅(%)',
 				valign:"middle",
-				align:"center"
+				align:"center",
+				formatter:function(value){
+					if(value==null || value=="-"){
+						return value;
+					}
+					return Number(value).toFixed(2);
+				}
 			}
 		]
 	];
@@ -1121,7 +1213,11 @@ function setCompanyAnnounce(data){
 	var content="";
  	$.each(data, function (index, ele) {
  		content+="<tr>";
- 		content+="<td style='text-align: left;'><a target='_blank' href="+ele.announceUrl+">"+ele.announceTitle+"</a></td>";
+ 		if(ele.announceTitle!=null){
+ 			content+="<td style='text-align: left;'><a target='_blank' href="+ele.announceUrl+">"+ele.announceTitle+"</a></td>";
+ 		}else{
+ 			content+="<td style='text-align: left;'><a target='_blank' href="+ele.announceUrl+">"+ele.announceUrl+"</a></td>";
+ 		}
  		content+="<td>"+ele.announceType+"</td>";
  		content+="<td>"+ele.announceDate+"</td>";
  		content+="</tr>";
@@ -1143,9 +1239,15 @@ function moreCompanyAnnounce(){
 				field: 'announceTitle',
 				title: '公告标题',
 				valign:"middle",
-				align:"center",
 				formatter: function (value, row, index) {
-					return "<a target='_blank' href="+row.announceUrl+">"+value+"</a>"
+					if(value!=null&&value!=""){
+						return "<a target='_blank' href="+row.announceUrl+">"+value+"</a>"
+					}else{
+						return "<a target='_blank' href="+row.announceUrl+">"+row.announceUrl+"</a>"
+					}
+		        },
+		        cellStyle:{
+		        	css:{"text-align":"left"}
 		        }
 			},
 			{
@@ -1171,7 +1273,7 @@ function moreCompanyAnnounce(){
 		sortable: false,      //是否启用排序  
 	    sortOrder: "asc",     //排序方式  
 	    pageNumber:1,      //初始化加载第一页，默认第一页  
-	    pageSize: 5,      //每页的记录行数（*）  
+	    pageSize: 10,      //每页的记录行数（*）  
 	    pageList: [10, 20, 50, 100],
 		columns:columns
 	});
@@ -1204,7 +1306,11 @@ function setCompanyNews(data){
 	var content="";
 	$.each(data, function (index, ele) {
 		content+="<tr>";
-		content+="<td style='text-align: left;'><a target='_blank' href="+ele.newsUrl+">"+ele.newsTitle+"</a></td>";
+		if(ele.newsTitle!=null){
+			content+="<td style='text-align: left;'><a target='_blank' href="+ele.newsUrl+">"+ele.newsTitle+"</a></td>";
+		}else{
+			content+="<td style='text-align: left;'><a target='_blank' href="+ele.newsUrl+">"+ele.newsUrl+"</a></td>";
+		}
 		content+="<td>"+ele.date+"</td>";
 		content+="</tr>";
 		if(index==2){
@@ -1225,9 +1331,15 @@ function moreCompanyNews(){
 				field: 'newsTitle',
 				title: '新闻标题',
 				valign:"middle",
-				align:"center",
 				formatter: function (value, row, index) {
-					return "<a target='_blank' href="+row.newsUrl+">"+value+"</a>"
+					if(value!=null&&value!=""){
+						return "<a target='_blank' href="+row.newsUrl+">"+value+"</a>"
+					}else{
+						return "<a target='_blank' href="+row.newsUrl+">"+row.newsUrl+"</a>"
+					}
+		        },
+		        cellStyle:{
+		        	css:{"text-align":"left"}
 		        }
 			},
 			{
@@ -1248,7 +1360,7 @@ function moreCompanyNews(){
 		sortable: false,      //是否启用排序  
 	    sortOrder: "asc",     //排序方式  
 	    pageNumber:1,      //初始化加载第一页，默认第一页  
-	    pageSize: 5,      //每页的记录行数（*）  
+	    pageSize: 10,      //每页的记录行数（*）  
 	    pageList: [10, 20, 50, 100],
 		columns:columns
 	});
